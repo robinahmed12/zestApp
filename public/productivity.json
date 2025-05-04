@@ -1,0 +1,162 @@
+[
+  {
+    "id": "app002",
+    "name": "Notion",
+    "developer": "Notion Labs, Inc.",
+    "thumbnail": "https://i.ibb.co/2Nn2WvM/notion-thumb.jpg",
+    "banner": "https://i.ibb.co/4tN7NbS/notion-banner.jpg",
+    "downloads": 10000000,
+    "category": "Productivity",
+    "rating": 4.7,
+    "description": "Notion is an all-in-one workspace where you can write, plan, collaborate and get organized.",
+    "features": ["Notes & documents", "Task management", "Database support"],
+    "reviews": [
+      {
+        "user": "organize_me",
+        "rating": 5,
+        "comment": "Perfect for managing work, study, and personal life!"
+      }
+    ]
+  },
+  {
+    "id": "app003",
+    "name": "Todoist",
+    "developer": "Doist Inc.",
+    "thumbnail": "https://i.ibb.co/1m9F1D0/todoist-thumb.jpg",
+    "banner": "https://i.ibb.co/GFbCKw0/todoist-banner.jpg",
+    "downloads": 15000000,
+    "category": "Productivity",
+    "rating": 4.6,
+    "description": "Todoist is a powerful task manager that helps you organize your life and get more done.",
+    "features": [
+      "Daily to-do lists",
+      "Project organization",
+      "Reminders and deadlines"
+    ],
+    "reviews": [
+      {
+        "user": "busybee44",
+        "rating": 4,
+        "comment": "Great task manager with lots of useful features!"
+      }
+    ]
+  },
+  {
+    "id": "app004",
+    "name": "Trello",
+    "developer": "Atlassian",
+    "thumbnail": "https://i.ibb.co/nRzHPrX/trello-thumb.jpg",
+    "banner": "https://i.ibb.co/tcT0qkz/trello-banner.jpg",
+    "downloads": 5000000,
+    "category": "Productivity",
+    "rating": 4.5,
+    "description": "Trello helps teams and individuals visually organize projects and tasks with ease.",
+    "features": ["Kanban boards", "Drag-and-drop tasks", "Team collaboration"],
+    "reviews": [
+      {
+        "user": "projectguru",
+        "rating": 5,
+        "comment": "Love the visual boards! Helps me stay on top of everything."
+      }
+    ]
+  },
+  {
+    "id": "app005",
+    "name": "Evernote",
+    "developer": "Evernote Corporation",
+    "thumbnail": "https://i.ibb.co/FKVMS8J/evernote-thumb.jpg",
+    "banner": "https://i.ibb.co/FbMxtDZ/evernote-banner.jpg",
+    "downloads": 20000000,
+    "category": "Productivity",
+    "rating": 4.3,
+    "description": "Evernote helps you capture and prioritize ideas, projects, and to-do lists.",
+    "features": ["Note taking", "Sync across devices", "Web clipping"],
+    "reviews": [
+      {
+        "user": "note_master",
+        "rating": 4,
+        "comment": "Great for organizing thoughts and ideas, but a bit pricey."
+      }
+    ]
+  },
+  {
+    "id": "app006",
+    "name": "Microsoft To Do",
+    "developer": "Microsoft Corporation",
+    "thumbnail": "https://i.ibb.co/Bz2mt7c/microsofttodo-thumb.jpg",
+    "banner": "https://i.ibb.co/YLD0tB3/microsofttodo-banner.jpg",
+    "downloads": 10000000,
+    "category": "Productivity",
+    "rating": 4.5,
+    "description": "Microsoft To Do is a simple and intelligent to-do list that makes task management easy.",
+    "features": ["Daily planner", "Cloud sync", "Task prioritization"],
+    "reviews": [
+      {
+        "user": "microsoftfan21",
+        "rating": 5,
+        "comment": "Clean and easy to use. Syncs perfectly with my other Microsoft apps."
+      }
+    ]
+  },
+  {
+    "id": "app007",
+    "name": "Google Keep",
+    "developer": "Google LLC",
+    "thumbnail": "https://i.ibb.co/M2MC9Q0/googlekeep-thumb.jpg",
+    "banner": "https://i.ibb.co/7RbYm0D/googlekeep-banner.jpg",
+    "downloads": 100000000,
+    "category": "Productivity",
+    "rating": 4.4,
+    "description": "Google Keep helps you capture what’s on your mind quickly and easily with notes and lists.",
+    "features": ["Voice memos", "Color-coded notes", "Google integration"],
+    "reviews": [
+      {
+        "user": "quicknotes",
+        "rating": 4,
+        "comment": "Great for fast note-taking, but lacks advanced features."
+      }
+    ]
+  },
+  {
+    "id": "app008",
+    "name": "Forest",
+    "developer": "Seekrtech",
+    "thumbnail": "https://i.ibb.co/3W1Cz8v/forest-thumb.jpg",
+    "banner": "https://i.ibb.co/z5Y4Fn8/forest-banner.jpg",
+    "downloads": 6000000,
+    "category": "Productivity",
+    "rating": 4.8,
+    "description": "Stay focused and plant virtual trees as you avoid distractions with Forest.",
+    "features": [
+      "Focus timer",
+      "Tree-growing motivation",
+      "Phone usage tracking"
+    ],
+    "reviews": [
+      {
+        "user": "focus_freak",
+        "rating": 5,
+        "comment": "It’s both fun and effective! Love watching my forest grow."
+      }
+    ]
+  },
+  {
+    "id": "app009",
+    "name": "Slack",
+    "developer": "Slack Technologies LLC",
+    "thumbnail": "https://i.ibb.co/YjkH7tT/slack-thumb.jpg",
+    "banner": "https://i.ibb.co/8D2bPfX/slack-banner.jpg",
+    "downloads": 10000000,
+    "category": "Productivity",
+    "rating": 4.2,
+    "description": "Slack is a messaging app for business that connects people to the information they need.",
+    "features": ["Team channels", "File sharing", "Integrations with tools"],
+    "reviews": [
+      {
+        "user": "teamwork_pro",
+        "rating": 4,
+        "comment": "Excellent for collaboration, but notifications can get overwhelming."
+      }
+    ]
+  }
+]

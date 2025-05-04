@@ -1,0 +1,164 @@
+[
+  {
+    "id": "app101",
+    "name": "MyFitnessPal",
+    "developer": "MyFitnessPal, Inc.",
+    "thumbnail": "https://i.ibb.co/Cv5YhN2/myfitnesspal-thumb.jpg",
+    "banner": "https://cdn.dribbble.com/userupload/10759537/file/original-ff5db687532879d55b04d796ef1feff4.jpg?resize=1024x768&vertical=center",
+    "downloads": 100000000,
+    "category": "Health & Fitness",
+    "rating": 4.9,
+    "description": "Track your food, exercise, and health goals with ease. MyFitnessPal helps users live healthier lives by offering nutrition tracking and personalized plans.",
+    "features": [
+      "Calorie and macro tracking",
+      "Custom meal plans",
+      "Fitness goal setting"
+    ],
+    "reviews": [
+      {
+        "user": "fitgirl2024",
+        "rating": 5,
+        "comment": "Absolutely love how easy it is to stay on top of my goals!"
+      }
+    ]
+  },
+  {
+    "id": "app102",
+    "name": "Headspace",
+    "developer": "Headspace Inc.",
+    "thumbnail": "https://i.ibb.co/SrztQQm/headspace-thumb.jpg",
+    "banner": "https://cdn.dribbble.com/userupload/37244343/file/original-19f034a42d268e7f203a4dfd404eec67.jpg?resize=752x564&vertical=center",
+    "downloads": 65000000,
+    "category": "Health & Fitness",
+    "rating": 4.9,
+    "description": "Headspace offers guided meditations, mindfulness tools, and sleep aids to improve mental well-being.",
+    "features": [
+      "Guided meditation sessions",
+      "Sleep and relaxation content",
+      "Mindfulness reminders"
+    ],
+    "reviews": [
+      {
+        "user": "zen_master",
+        "rating": 5,
+        "comment": "Life-changing app for stress and anxiety. Highly recommend!"
+      }
+    ]
+  },
+  {
+    "id": "app103",
+    "name": "Flo",
+    "developer": "Flo Health Inc.",
+    "thumbnail": "https://i.ibb.co/0JhCVPS/flo-thumb.jpg",
+    "banner": "https://cdn.dribbble.com/userupload/16959379/file/original-ad00cf486b031e0a92cead6419f9de81.png?resize=1024x768&vertical=center",
+    "downloads": 50000000,
+    "category": "Health",
+    "rating": 4.8,
+    "description": "Flo helps women track their periods, ovulation, and pregnancy with scientifically backed features.",
+    "features": [
+      "Period and ovulation tracker",
+      "Health insights",
+      "Private & secure data handling"
+    ],
+    "reviews": [
+      {
+        "user": "maria_bloom",
+        "rating": 5,
+        "comment": "Very accurate and informative. A must-have for women's health."
+      }
+    ]
+  },
+  {
+    "id": "app104",
+    "name": "Nike Training Club",
+    "developer": "Nike, Inc.",
+    "thumbnail": "https://i.ibb.co/6Bq1pTf/nike-training-thumb.jpg",
+    "banner": "https://cdn.dribbble.com/userupload/40984747/file/original-e37ad94b381b91c37e51eb105043b4d0.png?resize=752x564&vertical=center",
+    "downloads": 70000000,
+    "category": "Health & Fitness",
+    "rating": 4.8,
+    "description": "Nike Training Club offers a wide variety of workouts led by expert trainers—completely free.",
+    "features": [
+      "Home and gym workouts",
+      "Custom training plans",
+      "Professional coaching"
+    ],
+    "reviews": [
+      {
+        "user": "trainhard123",
+        "rating": 5,
+        "comment": "Professional-level training at home. Brilliant app!"
+      }
+    ]
+  },
+  {
+    "id": "app105",
+    "name": "Sleep Cycle",
+    "developer": "Sleep Cycle AB",
+    "thumbnail": "https://i.ibb.co/7r2Cw5m/sleep-cycle-thumb.jpg",
+    "banner": "https://cdn.dribbble.com/userupload/17120279/file/original-bea4aba25ec8c703198042bcba9f9493.png?resize=1024x768&vertical=center",
+    "downloads": 15000000,
+    "category": "Health",
+    "rating": 4.7,
+    "description": "Wake up feeling refreshed. Sleep Cycle analyzes your sleep and wakes you in your lightest phase.",
+    "features": [
+      "Smart alarm clock",
+      "Sleep analysis and statistics",
+      "Snore detection"
+    ],
+    "reviews": [
+      {
+        "user": "earlybird89",
+        "rating": 5,
+        "comment": "I wake up less groggy. Amazing tech!"
+      }
+    ]
+  },
+
+  {
+    "id": "app106",
+    "name": "Yazio",
+    "developer": "YAZIO",
+    "thumbnail": "https://i.ibb.co/SKDvX9r/yazio-thumb.jpg",
+    "banner": "https://cdn.dribbble.com/userupload/28918227/file/original-a6d5fad9f2b90effafbf0a924dad51ff.png?resize=400x0",
+    "downloads": 20000000,
+    "category": "Health & Fitness",
+    "rating": 4.7,
+    "description": "Yazio helps you track calories, manage weight loss, and improve nutrition with a personalized plan.",
+    "features": [
+      "Calorie and nutrition tracker",
+      "Fasting timer",
+      "Meal planning support"
+    ],
+    "reviews": [
+      {
+        "user": "healthfanatic",
+        "rating": 5,
+        "comment": "Easy to use and very effective for weight tracking."
+      }
+    ]
+  },
+  {
+    "id": "app107",
+    "name": "Water Reminder",
+    "developer": "Leap Fitness Group",
+    "thumbnail": "https://i.ibb.co/M7FZZrW/water-reminder-thumb.jpg",
+    "banner": "https://cdn.dribbble.com/userupload/32400191/file/original-0c11d6dad67c0a80d535e18e0590ec2f.jpg?resize=1024x768&vertical=center",
+    "downloads": 10000000,
+    "category": "Health & Fitness",
+    "rating": 4.6,
+    "description": "Stay hydrated with timely reminders and water intake tracking based on your body metrics.",
+    "features": [
+      "Custom hydration goals",
+      "Smart reminders",
+      "Daily intake log"
+    ],
+    "reviews": [
+      {
+        "user": "hydrationqueen",
+        "rating": 4.5,
+        "comment": "Great reminder tool. My water intake has improved a lot."
+      }
+    ]
+  }
+]

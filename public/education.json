@@ -1,0 +1,187 @@
+[
+    {
+      "id": "app001",
+      "name": "Programming Hero",
+      "developer": "Programming Hero Ltd.",
+      "thumbnail": "https://i.ibb.co/sWbb4Z5/programming-hero-thumb.jpg",
+      "banner": "https://i.ibb.co/vj5rT68/programming-hero-banner.jpg",
+      "downloads": 3500000,
+      "category": "Education",
+      "rating": 4.8,
+      "description": "Programming Hero is a fun and interactive way to learn programming. Whether you're a beginner or looking to brush up your skills, this app makes learning to code exciting and practical.",
+      "features": [
+        "Interactive coding lessons",
+        "Real-world projects",
+        "Gamified learning experience"
+      ],
+      "reviews": [
+        {
+          "user": "coder_nadia",
+          "rating": 5,
+          "comment": "Best app for beginners! The lessons are super easy to follow and engaging."
+        }
+      ]
+    },
+    {
+      "id": "app002",
+      "name": "Khan Academy",
+      "developer": "Khan Academy",
+      "thumbnail": "https://i.ibb.co/YXW7Z5s/khan-thumb.jpg",
+      "banner": "https://i.ibb.co/4TnLGGL/khan-banner.jpg",
+      "downloads": 10000000,
+      "category": "Education",
+      "rating": 4.7,
+      "description": "Khan Academy offers practice exercises, instructional videos, and a personalized learning dashboard for learners to study at their own pace.",
+      "features": [
+        "Thousands of lessons in math, science, and more",
+        "Practice quizzes",
+        "Progress tracking"
+      ],
+      "reviews": [
+        {
+          "user": "learner_max",
+          "rating": 5,
+          "comment": "This app helped me a lot with my math homework!"
+        }
+      ]
+    },
+    {
+      "id": "app003",
+      "name": "Duolingo",
+      "developer": "Duolingo Inc.",
+      "thumbnail": "https://i.ibb.co/fNqfB8y/duolingo-thumb.jpg",
+      "banner": "https://i.ibb.co/sQ7tFQc/duolingo-banner.jpg",
+      "downloads": 50000000,
+      "category": "Language Learning",
+      "rating": 4.6,
+      "description": "Duolingo makes learning a new language fun and addictive with quick, game-like lessons.",
+      "features": [
+        "Learn over 30 languages",
+        "Game-style exercises",
+        "Daily practice streaks"
+      ],
+      "reviews": [
+        {
+          "user": "traveler_sam",
+          "rating": 4,
+          "comment": "Love the layout and gamified system, but I wish it had more cultural context."
+        }
+      ]
+    },
+    {
+      "id": "app004",
+      "name": "Photomath",
+      "developer": "Photomath, Inc.",
+      "thumbnail": "https://i.ibb.co/JpX1tSB/photomath-thumb.jpg",
+      "banner": "https://i.ibb.co/8BnjVvm/photomath-banner.jpg",
+      "downloads": 30000000,
+      "category": "Math Education",
+      "rating": 4.5,
+      "description": "Photomath allows you to scan math problems and provides step-by-step solutions instantly.",
+      "features": [
+        "Scan and solve math problems",
+        "Step-by-step explanations",
+        "Covers arithmetic to calculus"
+      ],
+      "reviews": [
+        {
+          "user": "mathwhiz99",
+          "rating": 5,
+          "comment": "This app is a lifesaver for understanding complex math problems!"
+        }
+      ]
+    },
+    {
+      "id": "app005",
+      "name": "Coursera",
+      "developer": "Coursera Inc.",
+      "thumbnail": "https://i.ibb.co/mJKT1Q6/coursera-thumb.jpg",
+      "banner": "https://i.ibb.co/SdG3w5S/coursera-banner.jpg",
+      "downloads": 10000000,
+      "category": "Online Courses",
+      "rating": 4.4,
+      "description": "Coursera partners with universities and organizations to offer courses online for anyone to take, for free.",
+      "features": [
+        "University-level courses",
+        "Certificates upon completion",
+        "Offline access"
+      ],
+      "reviews": [
+        {
+          "user": "future_ceo",
+          "rating": 4,
+          "comment": "Great for professional development, though some courses are quite long."
+        }
+      ]
+    },
+    {
+      "id": "app006",
+      "name": "Brainly",
+      "developer": "Brainly, Inc.",
+      "thumbnail": "https://i.ibb.co/FnGZK4G/brainly-thumb.jpg",
+      "banner": "https://i.ibb.co/kc4BzjC/brainly-banner.jpg",
+      "downloads": 25000000,
+      "category": "Homework Help",
+      "rating": 4.3,
+      "description": "Brainly is a social learning app where students can ask and answer homework questions.",
+      "features": [
+        "Community-based answers",
+        "Help with all subjects",
+        "Fast responses"
+      ],
+      "reviews": [
+        {
+          "user": "studyqueen",
+          "rating": 5,
+          "comment": "Super useful when I'm stuck on a problem late at night."
+        }
+      ]
+    },
+    {
+      "id": "app007",
+      "name": "Quizlet",
+      "developer": "Quizlet Inc.",
+      "thumbnail": "https://i.ibb.co/G2rht2T/quizlet-thumb.jpg",
+      "banner": "https://i.ibb.co/VWY2Fkn/quizlet-banner.jpg",
+      "downloads": 15000000,
+      "category": "Study Tools",
+      "rating": 4.6,
+      "description": "Quizlet helps students practice and master what they’re learning through flashcards, games, and tests.",
+      "features": [
+        "Create and use flashcards",
+        "Multiple learning modes",
+        "Study reminders"
+      ],
+      "reviews": [
+        {
+          "user": "flashmaster101",
+          "rating": 5,
+          "comment": "Flashcards are a game changer for memorizing vocabulary!"
+        }
+      ]
+    },
+    {
+      "id": "app008",
+      "name": "BYJU'S",
+      "developer": "BYJU'S",
+      "thumbnail": "https://i.ibb.co/SrHZzN3/byjus-thumb.jpg",
+      "banner": "https://i.ibb.co/vZPSzCw/byjus-banner.jpg",
+      "downloads": 20000000,
+      "category": "Education",
+      "rating": 4.2,
+      "description": "BYJU’S offers online learning programs for students from classes 1 to 12, featuring engaging video lessons and personalized learning journeys.",
+      "features": [
+        "Interactive video lessons",
+        "Personalized learning paths",
+        "Mock tests and quizzes"
+      ],
+      "reviews": [
+        {
+          "user": "topstudent786",
+          "rating": 4,
+          "comment": "Great app, though some content requires a subscription."
+        }
+      ]
+    }
+  ]
+  

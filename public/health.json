@@ -1,0 +1,170 @@
+[
+  {
+    "id": "app101",
+    "name": "FitTrack Pro",
+    "developer": "WellnessTech Inc.",
+    "thumbnail": "https://i.ibb.co/XYZ1234/fittrack-thumb.jpg",
+    "banner": "https://i.ibb.co/ABC5678/fittrack-banner.jpg",
+    "downloads": 5000000,
+    "category": "Health & Fitness",
+    "rating": 4.7,
+    "description": "FitTrack Pro helps you monitor your workouts, track calories, and maintain a healthy lifestyle with personalized fitness plans.",
+    "features": [
+      "Workout tracker",
+      "Calorie counter",
+      "Personalized fitness plans"
+    ],
+    "reviews": [
+      {
+        "user": "fit_johnny",
+        "rating": 5,
+        "comment": "This app keeps me motivated every day!"
+      }
+    ]
+  },
+  {
+    "id": "app102",
+    "name": "MindEase",
+    "developer": "Calm Minds Ltd.",
+    "thumbnail": "https://i.ibb.co/XYZ1234/mindease-thumb.jpg",
+    "banner": "https://i.ibb.co/ABC5678/mindease-banner.jpg",
+    "downloads": 2000000,
+    "category": "Health & Fitness",
+    "rating": 4.6,
+    "description": "MindEase offers guided meditations, breathing exercises, and daily mindfulness activities to reduce stress and improve focus.",
+    "features": [
+      "Guided meditations",
+      "Mood tracker",
+      "Daily mindfulness reminders"
+    ],
+    "reviews": [
+      {
+        "user": "zen_master88",
+        "rating": 4,
+        "comment": "Great app for beginners in meditation."
+      }
+    ]
+  },
+  {
+    "id": "app103",
+    "name": "NutriCheck",
+    "developer": "HealthCore Technologies",
+    "thumbnail": "https://i.ibb.co/XYZ1234/nutricheck-thumb.jpg",
+    "banner": "https://i.ibb.co/ABC5678/nutricheck-banner.jpg",
+    "downloads": 1500000,
+    "category": "Health & Fitness",
+    "rating": 4.5,
+    "description": "NutriCheck allows users to scan food barcodes and instantly get nutritional information to make healthier food choices.",
+    "features": ["Barcode scanner", "Nutrition tracker", "Meal suggestions"],
+    "reviews": [
+      {
+        "user": "health_freak23",
+        "rating": 5,
+        "comment": "Makes shopping so much easier!"
+      }
+    ]
+  },
+  {
+    "id": "app104",
+    "name": "SleepWell",
+    "developer": "ZenApps Studio",
+    "thumbnail": "https://i.ibb.co/XYZ1234/sleepwell-thumb.jpg",
+    "banner": "https://i.ibb.co/ABC5678/sleepwell-banner.jpg",
+    "downloads": 1200000,
+    "category": "Health & Fitness",
+    "rating": 4.4,
+    "description": "SleepWell helps you fall asleep faster with soothing sounds, bedtime stories, and sleep tracking features.",
+    "features": ["Sleep sounds", "Bedtime stories", "Sleep quality analysis"],
+    "reviews": [
+      {
+        "user": "dreamer_dan",
+        "rating": 4,
+        "comment": "Really helps me sleep better at night."
+      }
+    ]
+  },
+  {
+    "id": "app105",
+    "name": "WaterPal",
+    "developer": "Hydrate Labs",
+    "thumbnail": "https://i.ibb.co/XYZ1234/waterpal-thumb.jpg",
+    "banner": "https://i.ibb.co/ABC5678/waterpal-banner.jpg",
+    "downloads": 2500000,
+    "category": "Health & Fitness",
+    "rating": 4.8,
+    "description": "WaterPal reminds you to drink enough water throughout the day to stay hydrated and healthy.",
+    "features": [
+      "Custom hydration goals",
+      "Reminder notifications",
+      "Water intake history"
+    ],
+    "reviews": [
+      {
+        "user": "aqua_addict",
+        "rating": 5,
+        "comment": "Never forget to drink water again!"
+      }
+    ]
+  },
+  {
+    "id": "app106",
+    "name": "BodyMetrics",
+    "developer": "SmartHealth Devs",
+    "thumbnail": "https://i.ibb.co/XYZ1234/bodymetrics-thumb.jpg",
+    "banner": "https://i.ibb.co/ABC5678/bodymetrics-banner.jpg",
+    "downloads": 1800000,
+    "category": "Health & Fitness",
+    "rating": 4.3,
+    "description": "Track your BMI, heart rate, and weight changes over time with BodyMetrics’ easy-to-use dashboard.",
+    "features": ["BMI calculator", "Heart rate monitor", "Progress charts"],
+    "reviews": [
+      {
+        "user": "gym_rat101",
+        "rating": 4,
+        "comment": "Very informative and user-friendly."
+      }
+    ]
+  },
+  {
+    "id": "app107",
+    "name": "HealthyHabits",
+    "developer": "LifeStyle Apps",
+    "thumbnail": "https://i.ibb.co/XYZ1234/healthyhabits-thumb.jpg",
+    "banner": "https://i.ibb.co/ABC5678/healthyhabits-banner.jpg",
+    "downloads": 3000000,
+    "category": "Health & Fitness",
+    "rating": 4.9,
+    "description": "HealthyHabits helps you build better routines, from morning workouts to better sleep, one step at a time.",
+    "features": ["Habit tracking", "Custom goals", "Streak rewards"],
+    "reviews": [
+      {
+        "user": "routine_queen",
+        "rating": 5,
+        "comment": "Love the habit streak feature!"
+      }
+    ]
+  },
+  {
+    "id": "app108",
+    "name": "YogaFlex",
+    "developer": "Om Studio Apps",
+    "thumbnail": "https://i.ibb.co/XYZ1234/yogaflex-thumb.jpg",
+    "banner": "https://i.ibb.co/ABC5678/yogaflex-banner.jpg",
+    "downloads": 4000000,
+    "category": "Health & Fitness",
+    "rating": 4.6,
+    "description": "YogaFlex offers guided yoga sessions for all levels to improve flexibility, balance, and mindfulness.",
+    "features": [
+      "Yoga for beginners",
+      "Daily challenges",
+      "Posture correction tips"
+    ],
+    "reviews": [
+      {
+        "user": "zen_yogi",
+        "rating": 4,
+        "comment": "Very calming and well-paced sessions."
+      }
+    ]
+  }
+]
