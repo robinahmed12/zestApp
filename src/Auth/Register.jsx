@@ -1,8 +1,31 @@
-import React from "react";
+import React, { use } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router";
+import { AuthContext } from "../Provider/AuthContext";
 
 const Register = () => {
+
+  const {createUser} = use(AuthContext)
+
+  const handleRegister  = (e) => {
+   
+    e.preventDefault()
+
+    const email = e.target.email.value
+    const password = e.target.password.value
+
+    // 
+    createUser(email , password).then(result => {
+      console.log(result);
+      
+    }).catch(error => {
+      console.log(error);
+      
+    })
+    
+    
+
+  }
   return (
     <>
       <div className="min-h-screen flex items-center justify-center  p-4">
@@ -11,25 +34,29 @@ const Register = () => {
             Create an Account
           </h2>
 
-          <form className="space-y-4">
+          <form onSubmit={handleRegister} className="space-y-4">
             <input
               type="text"
+              name="name"
               placeholder="Full Name"
               className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
             <input
               type="email"
+              name="email"
               placeholder="Email Address"
               className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
             <input
               type="text"
               placeholder="Photo URL"
+              name="photo"
               className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
             <input
               type="password"
               placeholder="Password"
+              name="password"
               className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
 
