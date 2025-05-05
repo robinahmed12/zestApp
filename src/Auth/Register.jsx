@@ -1,34 +1,53 @@
 import React, { use } from "react";
-import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router";
 import { AuthContext } from "../Provider/AuthContext";
+import { GoogleAuthProvider } from "firebase/auth";
+import { toast } from "react-toastify";
 
 const Register = () => {
+  const { createUser, setUser, singInWithGoogle } = use(AuthContext);
 
-  const {createUser , setUser} = use(AuthContext)
+  const handleRegister = (e) => {
+    e.preventDefault();
 
-  const handleRegister  = (e) => {
-   
-    e.preventDefault()
+    const email = e.target.email.value;
+    const password = e.target.password.value;
 
-    const email = e.target.email.value
-    const password = e.target.password.value
+    const RegExpLower = /[a-z]/;
+    const RegExpUpper = /[A-Z]/;
+    const RegExpLength = /^.{6,}$/;
 
-    // 
-    createUser(email , password).then(result => {
-      const user = result.user
-      setUser(user)
-      console.log(user);
-      
-      
-    }).catch(error => {
-      console.log(error);
-      
-    })
-    
-    
+    if (!RegExpLower.test(password)) {
+      toast("Must have a lowercase letter in the password");
+    } else if (!RegExpUpper.test(password)) {
+      toast("Must have an uppercase letter in the password");
+    } else if (!RegExpLength.test(password)) {
+      toast("Password must be at least 6 characters long");
+    }
 
-  }
+    //
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        console.log(user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleGoogle = () => {
+    const provider = new GoogleAuthProvider();
+
+    singInWithGoogle(provider)
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <>
       <div className="min-h-screen flex items-center justify-center  p-4">
@@ -82,8 +101,17 @@ const Register = () => {
           </div>
 
           <div className="mt-6">
-            <button className="w-full flex items-center justify-center gap-3 border border-gray-300 py-2 rounded-lg hover:bg-gray-100 transition">
-              <FaGoogle className="text-red-500" />
+            <button
+              onClick={handleGoogle}
+              className="w-full flex items-center justify-center gap-3 border border-gray-300 py-2 rounded-lg hover:bg-gray-100 transition"
+            >
+              <img
+                className="
+              h-5 w-5
+              "
+                src="https://www.svgrepo.com/show/355037/google.svg"
+                alt=""
+              />
               <span>Continue with Google</span>
             </button>
           </div>

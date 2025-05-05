@@ -1,10 +1,11 @@
 import React, { use } from "react";
-import { Link, Navigate, useLocation, useNavigate } from "react-router";
+import { Link,  useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthContext";
+import { GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
 
-  const {loginUser} = use(AuthContext)
+  const {loginUser , singInWithGoogle} = use(AuthContext)
   const location = useLocation()
   const navigate = useNavigate()
 
@@ -26,6 +27,18 @@ const Login = () => {
       
     })
 
+  }
+
+  const handleGoogleLogin = () => {
+    const provider = new GoogleAuthProvider();
+
+    singInWithGoogle(provider).then(result => {
+      console.log(result);
+      
+    }).catch(error => {
+      console.log(error);
+      
+    })
   }
   return (
     <>
@@ -70,7 +83,7 @@ const Login = () => {
           </div>
 
           <button
-            onClick={() => console.log("Google login")}
+            onClick={handleGoogleLogin}
             className="w-full bg-white border border-gray-300 hover:bg-gray-100 text-gray-700 font-semibold py-2 rounded-lg flex items-center justify-center space-x-2 transition duration-300"
           >
             <img
