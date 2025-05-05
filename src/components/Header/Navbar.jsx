@@ -1,9 +1,19 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import logo from "../../assets/Screenshot 2025-05-04 223150.png";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const {user , signOutUser} = use(AuthContext)
+
+  const handleSignOut = () => {
+
+    signOutUser().then(() => {
+      console.log('sign out successful');
+      
+    })
+  }
 
   return (
     <header className="p-4 bg-white  shadow-md dark:text-gray-800">
@@ -32,9 +42,14 @@ const Navbar = () => {
         </ul>
 
         <div className="hidden lg:flex">
-          <Link to={'/login'} className="px-6 py-2 bg-violet-600 text-white rounded hover:bg-violet-700 transition">
-            Login
-          </Link>
+         {
+          user ?  <Link onClick={handleSignOut} className="px-6 py-2 bg-violet-600 text-white rounded hover:bg-violet-700 transition">
+          Sign out
+        </Link>:
+         <Link to={'/login'} className="px-6 py-2 bg-violet-600 text-white rounded hover:bg-violet-700 transition">
+         Login
+       </Link>
+         }
         </div>
 
         {/* Mobile menu button */}

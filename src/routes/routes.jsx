@@ -6,6 +6,7 @@ import TrendingDetails from "../Sections/Trending/TrendingDetails";
 import Loading from "../components/Loading/Loading";
 import Login from "../Auth/Login";
 import Register from "../Auth/Register";
+import PrivateRoutes from "../private/PrivateRoutes";
 
 
 export const router = createBrowserRouter([
@@ -19,7 +20,7 @@ export const router = createBrowserRouter([
         },
         {
           path: '/details/:id',
-          element: <TrendingDetails/>,
+          element: <PrivateRoutes><TrendingDetails/></PrivateRoutes>,
           loader: ()=> fetch('/trending.json'),
           hydrateFallbackElement: <Loading/>
         },
