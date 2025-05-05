@@ -14,7 +14,7 @@ const Layout = () => {
       <main className="max-w-7xl mx-auto">
         <Outlet />
       </main>
-      <footer className="max-w-7xl mx-auto">
+      <footer className="mt-20">
         <Footer />
       </footer>
     </>
