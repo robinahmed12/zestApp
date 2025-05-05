@@ -2,6 +2,7 @@ import React, { use } from "react";
 import { Link,  useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthContext";
 import { GoogleAuthProvider } from "firebase/auth";
+import { toast } from "react-toastify";
 
 const Login = () => {
 
@@ -19,11 +20,13 @@ const Login = () => {
     // 
     loginUser(email , password).then(result => {
       console.log(result);
+      toast("Logged in successfully")
       navigate(`${location ? location.state : '/'}`)
       
       
     }).catch(error => {
       console.log(error);
+      toast(error.message)
       
     })
 
@@ -34,9 +37,12 @@ const Login = () => {
 
     singInWithGoogle(provider).then(result => {
       console.log(result);
+      toast("Logged in successfully")
+      navigate('/')
       
     }).catch(error => {
       console.log(error);
+      toast(error.message)
       
     })
   }

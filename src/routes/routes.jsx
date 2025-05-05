@@ -7,12 +7,14 @@ import Loading from "../components/Loading/Loading";
 import Login from "../Auth/Login";
 import Register from "../Auth/Register";
 import PrivateRoutes from "../private/PrivateRoutes";
+import Error from "../components/Error/Error";
 
 
 export const router = createBrowserRouter([
     {
       path: "/",
       element: <Layout/>,
+      errorElement: <Error/>,
       children: [
         {
             index: true,

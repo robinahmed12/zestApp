@@ -14,10 +14,9 @@ const Navbar = () => {
       
     })
   }
-
   return (
-    <header className="p-4 bg-white  shadow-md dark:text-gray-800">
-      <div className="container mx-auto  flex items-center justify-between h-16">
+    <header className="p-4 bg-white   shadow-md dark:text-gray-800">
+      <div className="container  max-w-7xl mx-auto  flex items-center justify-between h-16">
         <div>
           <img className="w-[150px]" src={logo} alt="Logo" />
         </div>

@@ -1,15 +1,15 @@
 import React, { use } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthContext";
 import { GoogleAuthProvider } from "firebase/auth";
 import { toast } from "react-toastify";
 
 const Register = () => {
   const { createUser, setUser, singInWithGoogle } = use(AuthContext);
-
+  const navigate = useNavigate()
   const handleRegister = (e) => {
     e.preventDefault();
-
+   
     const email = e.target.email.value;
     const password = e.target.password.value;
 
@@ -30,10 +30,11 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         setUser(user);
-        console.log(user);
+        toast('Account created successfully')
+        navigate('/')
       })
       .catch((error) => {
-        console.log(error);
+        toast(error.message)
       });
   };
 
@@ -43,9 +44,12 @@ const Register = () => {
     singInWithGoogle(provider)
       .then((result) => {
         console.log(result);
+        toast('Account created successfully')
+        navigate('/')
+        
       })
       .catch((error) => {
-        console.log(error);
+        toast(error.message)
       });
   };
   return (

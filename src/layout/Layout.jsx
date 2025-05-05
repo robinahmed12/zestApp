@@ -8,7 +8,7 @@ const Layout = () => {
   return (
     <>
       <header>
-        <nav className="max-w-7xl mx-auto">
+        <nav className="">
           <Navbar />
         </nav>
       </header>
