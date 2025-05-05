@@ -11,7 +11,7 @@ const Layout = () => {
           <Navbar />
         </nav>
       </header>
-      <main className="max-w-7xl mx-auto">
+      <main className="max-w-7xl mx-auto min-h-[475px]">
         <Outlet />
       </main>
       <footer className="mt-20">

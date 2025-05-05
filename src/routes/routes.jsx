@@ -4,6 +4,8 @@ import Home from "../pages/Home/Home";
 import { BsApp } from "react-icons/bs";
 import TrendingDetails from "../Sections/Trending/TrendingDetails";
 import Loading from "../components/Loading/Loading";
+import Login from "../Auth/Login";
+import Register from "../Auth/Register";
 
 
 export const router = createBrowserRouter([
@@ -20,6 +22,15 @@ export const router = createBrowserRouter([
           element: <TrendingDetails/>,
           loader: ()=> fetch('/trending.json'),
           hydrateFallbackElement: <Loading/>
+        },
+
+        {
+          path:'/login',
+          element: <Login/>
+        },
+        {
+          path: '/login/register',
+          element: <Register/>
         }
       ]
     },

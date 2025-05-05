@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import logo from "../../assets/Screenshot 2025-05-04 223150.png";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,9 +32,9 @@ const Navbar = () => {
         </ul>
 
         <div className="hidden lg:flex">
-          <button className="px-6 py-2 bg-violet-600 text-white rounded hover:bg-violet-700 transition">
+          <Link to={'/login'} className="px-6 py-2 bg-violet-600 text-white rounded hover:bg-violet-700 transition">
             Login
-          </button>
+          </Link>
         </div>
 
         {/* Mobile menu button */}
