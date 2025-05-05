@@ -7,31 +7,32 @@ const TrendingCard = ({ app }) => {
   const { id, banner, name, rating, downloads } = app;
 
   return (
-    <Link to={`/details/${id}`}>
-      
-        <div className="mt-14 ml-3 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg bg-base-200 rounded-2xl p-4 shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out hover:scale-105 cursor-pointer">
-          <img
-            className="w-full h-48 object-cover rounded-xl"
-            src={banner}
-            alt={name}
-          />
-          <div className="flex flex-col sm:flex-row items-center justify-between mt-4 text-sm sm:text-base gap-2">
-            <p className="font-semibold text-center sm:text-left">{name}</p>
-            <div className="flex items-center gap-1 text-orange-400">
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStarHalfAlt />
-              <span className="ml-1 text-gray-700">{rating}</span>
-            </div>
-            <div className="flex items-center gap-1 text-gray-600">
-              <IoCloudDownloadOutline className="text-xl" />
-              <span>{downloads}</span>
+    <Link to={`/details/${id}`} className="block w-full">
+          <div className="mt-6 mx-auto w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg bg-base-200 rounded-2xl p-4 shadow-md hover:shadow-xl hover:scale-[1.03] transition-all duration-300 ease-in-out cursor-pointer">
+            <img
+              src={banner}
+              alt={name}
+              className="w-full h-48 sm:h-56 md:h-60 object-cover rounded-xl"
+            />
+            <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm sm:text-base">
+              <p className="font-semibold text-center sm:text-left flex-1">{name}</p>
+    
+              <div className="flex items-center text-orange-400 gap-1">
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStarHalfAlt />
+                <span className="ml-1 text-gray-700 text-xs sm:text-sm">{rating}</span>
+              </div>
+    
+              <div className="flex items-center gap-1 text-gray-600 text-xs sm:text-sm">
+                <IoCloudDownloadOutline className="text-lg sm:text-xl" />
+                <span>{downloads}</span>
+              </div>
             </div>
           </div>
-        </div>
-    </Link>
+        </Link>
   );
 };
 
