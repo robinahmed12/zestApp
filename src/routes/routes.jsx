@@ -8,6 +8,7 @@ import Login from "../Auth/Login";
 import Register from "../Auth/Register";
 import PrivateRoutes from "../private/PrivateRoutes";
 import Error from "../components/Error/Error";
+import App from "../pages/App/App";
 
 
 export const router = createBrowserRouter([
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
         {
           path: '/login/register',
           element: <Register/>
+        },
+        {
+          path: '/apps',
+          element: <App/>
         }
       ]
     },

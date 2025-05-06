@@ -4,6 +4,7 @@ import Trending from '../../Sections/Trending/Trending';
 import App from '../App/App';
 import Education from '../../Sections/Education/Education';
 import Health from '../../Sections/Health/Health';
+import Productivity from '../../Sections/Productivity/Productivity';
 
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
        <Trending/>
        <Education/>
        <Health/>
+       <Productivity/>
        </>
     );
 };

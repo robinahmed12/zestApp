@@ -29,7 +29,7 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/apps" className="px-4 hover:text-violet-600">
+            <NavLink to={'/apps'} className="px-4 hover:text-violet-600">
               Apps
             </NavLink>
           </li>
