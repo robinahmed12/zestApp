@@ -5,6 +5,8 @@ import slider1 from "../../assets/3909330.jpg";
 import slider2 from "../../assets/4230372.jpg";
 import slider3 from "../../assets/3967156.jpg";
 import slider4 from "../../assets/3969052.jpg";
+import slider5 from "../../assets/4326821.jpg";
+import slider6 from "../../assets/9059760.jpg";
 
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -23,21 +25,16 @@ const Slider = () => {
     <>
       <div className="navigation-wrapper mt-12 relative max-w-full px-4 sm:px-6 lg:px-8">
         <div ref={sliderRef} className="keen-slider rounded-2xl">
-          {[slider1, slider2, slider3, slider4].map((img, i) => (
+          {[slider1, slider2, slider3, slider4 , slider5 , slider6].map((img, i) => (
             <div key={i} className="keen-slider__slide">
               <img
                 src={img}
                 alt={`slide-${i + 1}`}
-                className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] object-cover rounded-2xl"
+                className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[650px] object-cover rounded-2xl"
               />
             </div>
           ))}
-          <div className="keen-slider__slide flex items-center justify-center text-2xl font-bold">
-            5
-          </div>
-          <div className="keen-slider__slide flex items-center justify-center text-2xl font-bold">
-            6
-          </div>
+       
         </div>
 
         {loaded && instanceRef.current && (

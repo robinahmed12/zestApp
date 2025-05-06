@@ -1,11 +1,12 @@
-import React from "react";
-import { useLoaderData, useParams } from "react-router";
+import React from 'react';
+import { useLoaderData, useParams } from 'react-router';
 
-const TrendingDetails = () => {
-  const { id } = useParams();
+const EducationDetails = () => {
+    const { id } = useParams();
   const data = useLoaderData();
-
   const singleApp = data.find((a) => a.id === id);
+  console.log(singleApp);
+  
 
   const {
     name,
@@ -19,16 +20,16 @@ const TrendingDetails = () => {
     reviews,
     thumbnail,
   } = singleApp;
-
-  return (
-    <div className="mt-20 p-4 md:p-10 bg-gradient-to-br from-blue-50 to-purple-50">
+    return (
+        <>
+        <div className="mt-20 p-4 md:p-10 bg-gradient-to-br from-blue-50 to-purple-50">
       <div className="flex flex-col-reverse md:flex-row gap-8 bg-white rounded-2xl shadow-lg overflow-hidden">
         {/* Left Section - Details */}
         <div className="w-full md:w-1/2 p-6 space-y-6">
           {/* App Info */}
           <div className="flex items-center gap-4">
             <img
-              src={thumbnail}
+              src={banner}
               alt=""
               className="w-16 h-16 rounded-xl shadow-md transition-transform hover:scale-110 duration-300"
             />
@@ -84,14 +85,15 @@ const TrendingDetails = () => {
         {/* Right Section - Banner */}
         <div className="w-full md:w-1/2">
           <img
-            src={banner}
+            src={thumbnail}
             alt="App Banner"
             className="w-full mt-10 h-full object-cover transition-transform duration-300 hover:scale-105"
           />
         </div>
       </div>
     </div>
-  );
+        </>
+    );
 };
 
-export default TrendingDetails;
+export default EducationDetails;

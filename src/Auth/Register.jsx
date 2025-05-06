@@ -5,13 +5,18 @@ import { GoogleAuthProvider } from "firebase/auth";
 import { toast } from "react-toastify";
 
 const Register = () => {
-  const { createUser, setUser, singInWithGoogle } = use(AuthContext);
-  const navigate = useNavigate()
+  const { createUser, setUser, singInWithGoogle, updaterUser } =
+    use(AuthContext);
+  const navigate = useNavigate();
   const handleRegister = (e) => {
     e.preventDefault();
-   
+
     const email = e.target.email.value;
     const password = e.target.password.value;
+    const name = e.target.name.value;
+    const photo = e.target.photo.value;
+    console.log(name , photo);
+    
 
     const RegExpLower = /[a-z]/;
     const RegExpUpper = /[A-Z]/;
@@ -26,16 +31,21 @@ const Register = () => {
     }
 
     //
-    createUser(email, password)
-      .then((result) => {
-        const user = result.user;
-        setUser(user);
-        toast('Account created successfully')
-        navigate('/')
-      })
-      .catch((error) => {
-        toast(error.message)
-      });
+    createUser(email, password).then((result) => {
+      const user = result.user;
+      updaterUser({ displayName: name, photoURL: photo })
+        .then(() => {
+          setUser({ ...user, displayName: name, photoURL: photo });
+          
+
+          toast("Account created successfully");
+          navigate("/");
+        })
+        .catch((error) => {
+          toast(error.message);
+          setUser(user);
+        });
+    });
   };
 
   const handleGoogle = () => {
@@ -44,12 +54,11 @@ const Register = () => {
     singInWithGoogle(provider)
       .then((result) => {
         console.log(result);
-        toast('Account created successfully')
-        navigate('/')
-        
+        toast("Account created successfully");
+        navigate("/");
       })
       .catch((error) => {
-        toast(error.message)
+        toast(error.message);
       });
   };
   return (

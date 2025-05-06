@@ -6,34 +6,34 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../firebase/firebase.init";
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loading , setLoading] = useState(true)
+  console.log(user);
+  
+  const [loading, setLoading] = useState(true);
 
   const createUser = (email, password) => {
-    setLoading(true)
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
-
   };
 
   const loginUser = (email, password) => {
-    setLoading(true)
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  const singInWithGoogle =(provider) => {
-    return signInWithPopup( auth , provider)
-  }
+  const singInWithGoogle = (provider) => {
+    return signInWithPopup(auth, provider);
+  };
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      setLoading(false)
-     
-      
+      setLoading(false);
     });
 
     () => {
@@ -42,18 +42,22 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const signOutUser = () => {
+    return signOut(auth);
+  };
 
-    return signOut(auth)
-  }
+  const updaterUser = (updateData) => {
+    return updateProfile(auth.currentUser, updateData);
+  };
 
   const userData = {
+    updaterUser,
     user,
     setUser,
     createUser,
     loginUser,
     singInWithGoogle,
     signOutUser,
-    loading
+    loading,
   };
 
   return (

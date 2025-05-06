@@ -4,10 +4,10 @@ import { IoCloudDownloadOutline } from 'react-icons/io5';
 import { Link } from 'react-router-dom'; // changed to 'react-router-dom'
 
 const EducationCard = ({ app }) => {
-  const { thumbnail, name, rating, downloads } = app;
+  const { thumbnail, name, rating, downloads , id } = app;
 
   return (
-    <Link to="/" className="block w-full">
+    <Link to={`/detail/${id}`} className="block w-full">
       <div className="mt-6 mx-auto w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg bg-base-200 rounded-2xl p-4 shadow-md hover:shadow-xl hover:scale-[1.03] transition-all duration-300 ease-in-out cursor-pointer">
         <img
           src={thumbnail}
