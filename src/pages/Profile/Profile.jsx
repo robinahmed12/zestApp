@@ -1,13 +1,14 @@
 import React, { use, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthContext";
 import { toast } from "react-toastify";
+import Loading from "../../components/Loading/Loading";
 
 const Profile = () => {
   const { user, updaterUser } = use(AuthContext);
 
   const [name, setName] = useState(user?.displayName || "");
   const [photoURL, setPhotoURL] = useState(user?.photoURL || "");
-  const [loading, setLoading] = useState(false);
+  const [loadings, setLoadings] = useState(false);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -17,12 +18,10 @@ const Profile = () => {
     }
   }, [user]);
 
- 
-
   const handleSave = async () => {
     if (!user) return;
 
-    setLoading(true);
+    setLoadings(true);
     setError("");
 
     try {
@@ -35,29 +34,30 @@ const Profile = () => {
       toast("Failed to update profile. Please try again.");
       console.error(err);
     } finally {
-      setLoading(false);
+      setLoadings(false);
     }
   };
 
   return (
-    <>
-      <div className="max-w-lg mx-auto mt-10 p-6 bg-white rounded-xl shadow-md space-y-4 border border-blue-200">
-        <div className="flex items-center space-x-4">
+    <div className="max-w-2xl mx-auto mt-8 px-4 sm:px-6 lg:px-8">
+      <div className="p-6 sm:p-8 bg-white rounded-xl shadow-md border border-blue-200 space-y-6">
+        {/* Profile Header */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-6 space-y-4 sm:space-y-0">
           <img
-            src={photoURL || "https://via.placeholder.com/80"}
+            src={photoURL || ""}
             alt="Profile"
-            className="w-20 h-20 rounded-full object-cover border-2 border-blue-500"
+            className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover border-2 border-blue-500"
           />
           <div>
-            <p className="text-lg font-medium text-gray-900">
+            <p className="text-xl sm:text-2xl font-semibold text-gray-900">
               {name || "No Name"}
             </p>
-            <p className="text-sm text-gray-500">{user?.email}</p>
+            <p className="text-sm sm:text-base text-gray-500">{user?.email}</p>
           </div>
         </div>
 
         {/* Edit Form */}
-        <div className="space-y-4 mt-6">
+        <div className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Name
@@ -88,18 +88,18 @@ const Profile = () => {
 
           <button
             onClick={handleSave}
-            disabled={loading}
-            className={`w-full py-2 px-4 rounded-lg font-semibold text-white ${
-              loading
+            disabled={loadings}
+            className={`w-full py-2 px-4 rounded-lg font-semibold text-white text-base ${
+              loadings
                 ? "bg-purple-300 cursor-not-allowed"
                 : "bg-purple-600 hover:bg-purple-700"
             } transition duration-200`}
           >
-            {loading ? "Saving..." : "Save Changes"}
+            {loadings ? "Saving..." : "Save Changes"}
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -1,32 +1,32 @@
 import React, { useContext, useState } from "react";
-import logo from "../../assets/logo-removebg-preview.png";
+import logo from "../../assets/log2-removebg-preview.png";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { user, signOutUser } = useContext(AuthContext); // ✅ fixed from 'use'
+  const { user, signOutUser } = useContext(AuthContext); 
 
   const handleSignOut = () => {
     signOutUser().then(() => {
       console.log("sign out successful");
     });
-    setIsOpen(false); // ✅ Close menu on sign out (mobile)
+    setIsOpen(false); 
   };
 
   const handleNavClick = () => {
-    setIsOpen(false); // ✅ Close mobile menu on nav click
+    setIsOpen(false); 
   };
 
   return (
     <header className="bg-white  shadow-md dark:text-gray-800">
-      <div className="max-w-7xl mx-auto px-4 mt-5  sm:px-6 lg:px-8 flex  items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-4 pb-5   sm:px-6 lg:px-8 flex  items-center justify-between h-16">
         <Link to="/">
-          <img className="w-[140px]" src={logo} alt="Logo" />
+          <img className="w-[190px]" src={logo} alt="Logo" />
         </Link>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex space-x-6 items-center">
+        <ul className="hidden text-lg md:flex space-x-6 items-center">
           {["/", "/apps", "/profile"].map((path, i) => {
             const names = ["Home", "Apps", "My Profile"];
             return (
@@ -66,7 +66,7 @@ const Navbar = () => {
           {user ? (
             <button
               onClick={handleSignOut}
-              className="px-6 py-2 text-white rounded transition bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500"
+              className="px-6 py-2 text-white text-lg rounded transition bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500"
             >
               Log out
             </button>
@@ -106,7 +106,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <nav className="md:hidden px-4 pb-4 space-y-2">
+        <nav className="md:hidden text-lg px-4 pb-4 space-y-2">
           {["/", "/apps", "/profile"].map((path, i) => {
             const names = ["Home", "Apps", "My Profile"];
             return (
@@ -131,7 +131,7 @@ const Navbar = () => {
             <Link
               to="/login"
               onClick={handleNavClick}
-              className="block px-4 py-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded text-center hover:from-blue-500 hover:to-purple-500"
+              className="block px-4 text-lg py-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded text-center hover:from-blue-500 hover:to-purple-500"
             >
               Login
             </Link>

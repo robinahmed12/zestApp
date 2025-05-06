@@ -92,7 +92,7 @@ const HealthDetails = () => {
             <img
               src={thumbnail}
               alt="App Banner"
-              className="w-full mt-10 h-full object-cover transition-transform duration-300 hover:scale-105"
+              className="w-[700px] mt-10  object-cover transition-transform duration-300 hover:scale-105"
             />
           </div>
         </div>

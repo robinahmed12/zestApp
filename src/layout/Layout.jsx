@@ -8,8 +8,8 @@ import Slider from "../components/Slider/Slider";
 const Layout = () => {
   return (
     <>
-      <header>
-        <nav className="">
+      <header className="pt-8 pb-5">
+        <nav >
           <Navbar />
         </nav>
       </header>
