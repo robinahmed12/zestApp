@@ -9,6 +9,14 @@ import slider5 from "../../assets/4326821.jpg";
 import slider6 from "../../assets/9059760.jpg";
 
 const Slider = () => {
+  const promotionalTexts = [
+    ["Discover the Future", "Innovative solutions for modern living"],
+    ["Style Meets Comfort", "Upgrade your lifestyle with ease"],
+    ["Smart Choices Today", "Empowering better decisions tomorrow"],
+    ["Seamless Experiences", "Technology that adapts to you"],
+    ["Elegance in Every Pixel", "Visuals that captivate and inspire"],
+    ["Redefine Your World", "Where ideas come to life"],
+  ];
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider({
@@ -25,16 +33,27 @@ const Slider = () => {
     <>
       <div className="navigation-wrapper mt-12 relative max-w-full px-4 sm:px-6 lg:px-8">
         <div ref={sliderRef} className="keen-slider rounded-2xl">
-          {[slider1, slider2, slider3, slider4 , slider5 , slider6].map((img, i) => (
-            <div key={i} className="keen-slider__slide">
-              <img
-                src={img}
-                alt={`slide-${i + 1}`}
-                className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[650px] object-cover rounded-2xl"
-              />
-            </div>
-          ))}
-       
+          {[slider1, slider2, slider3, slider4, slider5, slider6].map(
+            (img, i) => (
+              <div key={i} className="keen-slider__slide relative">
+                <img
+                  src={img}
+                  alt={`slide-${i + 1}`}
+                  className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[650px] object-cover rounded-2xl"
+                />
+                <div className="absolute inset-0 bg-black/30 rounded-2xl flex flex-col justify-center items-center text-center  shadow-sm text-black px-4">
+                  <div className=" text-white  mt-8 rounded-2xl px-2 ">
+                    <h2 className="text-xl sm:text-2xl  md:text-6xl font-bold mb-2">
+                      {promotionalTexts[i][0]}
+                    </h2>
+                    <p className="text-sm  sm:text-base md:text-3xl">
+                      {promotionalTexts[i][1]}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )
+          )}
         </div>
 
         {loaded && instanceRef.current && (

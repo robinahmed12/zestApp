@@ -1,0 +1,44 @@
+[
+    {
+      "app_name": "FitJourney",
+      "image_url": "https://example.com/images/fitjourney.jpg",
+      "promotional_title": "Start Your Fitness Journey Today!\nTrack. Train. Transform.",
+      "description": "A smart fitness tracker and workout planner tailored to your goals.",
+      "platform": "iOS & Android"
+    },
+    {
+      "app_name": "MindSpace",
+      "image_url": "https://example.com/images/mindspace.jpg",
+      "promotional_title": "Find Peace in a Busy World.\nYour Daily Dose of Calm.",
+      "description": "New meditation app with AI-powered mindfulness sessions and sleep stories.",
+      "platform": "iOS"
+    },
+    {
+      "app_name": "EcoTrack",
+      "image_url": "https://example.com/images/ecotrack.jpg",
+      "promotional_title": "Live Green, Stay Clean.\nTrack Your Eco Impact!",
+      "description": "An eco-friendly lifestyle app that helps you reduce carbon footprint daily.",
+      "platform": "Android"
+    },
+    {
+      "app_name": "QuickChef",
+      "image_url": "https://example.com/images/quickchef.jpg",
+      "promotional_title": "Cook Like a Pro in Minutes.\nRecipes at Your Fingertips.",
+      "description": "AI recipe generator using ingredients you already have at home.",
+      "platform": "iOS & Android"
+    },
+    {
+      "app_name": "StudyFlow",
+      "image_url": "https://example.com/images/studyflow.jpg",
+      "promotional_title": "Ace Your Exams Effortlessly.\nSmart Study Made Simple.",
+      "description": "All-in-one study planner with focus timers, flashcards, and progress tracking.",
+      "platform": "Android"
+    },
+    {
+      "app_name": "Wanderly",
+      "image_url": "https://example.com/images/wanderly.jpg",
+      "promotional_title": "Travel Smarter, Not Harder.\nDiscover Hidden Gems.",
+      "description": "New travel companion app with offline maps, local tips, and real-time guides.",
+      "platform": "iOS & Android"
+    }
+  ]

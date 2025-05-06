@@ -79,18 +79,23 @@ const Navbar = () => {
 
         <div className="flex items-center gap-4">
           {/*  */}
-          <div className="relative group">
-            <img
-              src={`${user ? user.photoURL : ""}`}
-              alt="Profile"
-              className="w-[60px] object-cover rounded-full"
-            />
-            <div className="absolute inset-0 bg-white bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center rounded-full transition-opacity">
-              <span className="text-red-400 text-lg font-semibold">
-                {user.displayName}
-              </span>
+          {user ? (
+            <div className="relative group">
+              <img
+                src={`${user ? user.photoURL : ""}`}
+                alt="Profile"
+                className="w-[60px] object-cover rounded-full"
+              />
+              <div className="absolute inset-0 bg-white bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center rounded-full transition-opacity">
+                <span className="text-red-400 text-lg font-semibold">
+                  {`${user ? user.displayName : ""}`}
+                </span>
+              </div>
             </div>
-          </div>
+          ) : (
+            ""
+          )}
+
           {/*  */}
 
           <div className="hidden lg:flex">
@@ -100,7 +105,7 @@ const Navbar = () => {
                   onClick={handleSignOut}
                   className="px-6 py-2 text-white rounded transition bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500"
                 >
-                  Sign out
+                  Log out
                 </Link>
               </div>
             ) : (
@@ -112,7 +117,6 @@ const Navbar = () => {
               </Link>
             )}
           </div>
-
         </div>
 
         {/* Mobile menu button */}
