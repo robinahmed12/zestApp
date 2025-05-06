@@ -13,7 +13,7 @@ import { auth } from "../firebase/firebase.init";
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   console.log(user);
-  
+
   const [loading, setLoading] = useState(true);
 
   const createUser = (email, password) => {
@@ -46,6 +46,7 @@ const AuthProvider = ({ children }) => {
   };
 
   const updaterUser = (updateData) => {
+    setUser({ ...auth.currentUser, ...updateData });
     return updateProfile(auth.currentUser, updateData);
   };
 

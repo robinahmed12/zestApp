@@ -10,10 +10,10 @@ import slider6 from "../../assets/9059760.jpg";
 
 const Slider = () => {
   const promotionalTexts = [
-    ["Discover the Future", "Innovative solutions for modern living"],
-    ["Style Meets Comfort", "Upgrade your lifestyle with ease"],
-    ["Smart Choices Today", "Empowering better decisions tomorrow"],
-    ["Seamless Experiences", "Technology that adapts to you"],
+    ["Feel Better Faster with ", "Instant Doctor Access"],
+    ["Master Your Tasks – Anytime, Anywhere", "Organize. Prioritize. Succeed."],
+    ["Doctor Visits Made Easy", "Book appointments, get consultations, stay healthy"],
+    ["Welcome to the Future of Healthcare", "Connect with trusted doctors in seconds"],
     ["Elegance in Every Pixel", "Visuals that captivate and inspire"],
     ["Redefine Your World", "Where ideas come to life"],
   ];
@@ -42,7 +42,7 @@ const Slider = () => {
                   className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[650px] object-cover rounded-2xl"
                 />
                 <div className="absolute inset-0 bg-black/30 rounded-2xl flex flex-col justify-center items-center text-center  shadow-sm text-black px-4">
-                  <div className=" text-white  mt-8 rounded-2xl px-2 ">
+                  <div className=" text-base-300  mt-8 rounded-2xl px-2 ">
                     <h2 className="text-xl sm:text-2xl  md:text-6xl font-bold mb-2">
                       {promotionalTexts[i][0]}
                     </h2>

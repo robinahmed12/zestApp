@@ -1,126 +1,87 @@
-import React, { use, useState } from "react";
-import logo from "../../assets/Screenshot 2025-05-04 223150.png";
+import React, { useContext, useState } from "react";
+import logo from "../../assets/logo-removebg-preview.png";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { user, signOutUser } = use(AuthContext);
+  const { user, signOutUser } = useContext(AuthContext); // ✅ fixed from 'use'
 
   const handleSignOut = () => {
     signOutUser().then(() => {
       console.log("sign out successful");
     });
+    setIsOpen(false); // ✅ Close menu on sign out (mobile)
   };
-  return (
-    <header className="p-4 bg-white   shadow-md dark:text-gray-800">
-      <div className="container  max-w-7xl mx-auto  flex items-center justify-between h-16">
-        <div>
-          <img className="w-[150px]" src={logo} alt="Logo" />
-        </div>
 
-        {/* Desktop Menu */}
-        {/* <ul className="hidden lg:flex space-x-6 items-center">
-          <li>
-            <NavLink
-             to="/" className="px-4 hover:text-violet-600">
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to={"/apps"} className="px-4 hover:text-violet-600">
-              Apps
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/profile" className="px-4 hover:text-violet-600">
-              My Profile
-            </NavLink>
-          </li>
-        </ul> */}
-        <ul className="hidden lg:flex space-x-6 items-center">
-          <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                `px-4 hover:text-violet-600 transition-colors duration-200 ${
-                  isActive ? "text-blue-600 font-semibold" : "text-gray-700"
-                }`
-              }
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/apps"
-              className={({ isActive }) =>
-                `px-4 hover:text-violet-600 transition-colors duration-200 ${
-                  isActive ? "text-blue-600 font-semibold" : "text-gray-700"
-                }`
-              }
-            >
-              Apps
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/profile"
-              className={({ isActive }) =>
-                `px-4 hover:text-violet-600 transition-colors duration-200 ${
-                  isActive ? "text-blue-600 font-semibold" : "text-gray-700"
-                }`
-              }
-            >
-              My Profile
-            </NavLink>
-          </li>
+  const handleNavClick = () => {
+    setIsOpen(false); // ✅ Close mobile menu on nav click
+  };
+
+  return (
+    <header className="bg-white  shadow-md dark:text-gray-800">
+      <div className="max-w-7xl mx-auto px-4 mt-5  sm:px-6 lg:px-8 flex  items-center justify-between h-16">
+        <Link to="/">
+          <img className="w-[140px]" src={logo} alt="Logo" />
+        </Link>
+
+        {/* Desktop Nav */}
+        <ul className="hidden md:flex space-x-6 items-center">
+          {["/", "/apps", "/profile"].map((path, i) => {
+            const names = ["Home", "Apps", "My Profile"];
+            return (
+              <li key={path}>
+                <NavLink
+                  to={path}
+                  className={({ isActive }) =>
+                    `px-4 hover:text-violet-600 transition-colors duration-200 ${
+                      isActive ? "text-blue-600 font-semibold" : "text-gray-700"
+                    }`
+                  }
+                >
+                  {names[i]}
+                </NavLink>
+              </li>
+            );
+          })}
         </ul>
 
-        <div className="flex items-center gap-4">
-          {/*  */}
-          {user ? (
+        {/* Right Side */}
+        <div className="hidden md:flex items-center gap-4">
+          {user && (
             <div className="relative group">
               <img
-                src={`${user ? user.photoURL : ""}`}
+                src={user.photoURL || ""}
                 alt="Profile"
-                className="w-[60px] object-cover rounded-full"
+                className="h-10 w-10 rounded-full object-cover border-2 border-purple-500"
               />
               <div className="absolute inset-0 bg-white bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center rounded-full transition-opacity">
-                <span className="text-red-400 text-lg font-semibold">
-                  {`${user ? user.displayName : ""}`}
+                <span className="text-red-400 text-sm font-semibold text-center">
+                  {user.displayName}
                 </span>
               </div>
             </div>
-          ) : (
-            ""
           )}
 
-          {/*  */}
-
-          <div className="hidden lg:flex">
-            {user ? (
-              <div className="flex items-center gap-1">
-                <Link
-                  onClick={handleSignOut}
-                  className="px-6 py-2 text-white rounded transition bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500"
-                >
-                  Log out
-                </Link>
-              </div>
-            ) : (
-              <Link
-                to="/login"
-                className="px-8 py-2 text-white rounded transition bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500"
-              >
-                Login
-              </Link>
-            )}
-          </div>
+          {user ? (
+            <button
+              onClick={handleSignOut}
+              className="px-6 py-2 text-white rounded transition bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500"
+            >
+              Log out
+            </button>
+          ) : (
+            <Link
+              to="/login"
+              className="px-6 py-2 text-white rounded transition bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500"
+            >
+              Login
+            </Link>
+          )}
         </div>
 
-        {/* Mobile menu button */}
-        <div className="lg:hidden">
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="p-2 focus:outline-none"
@@ -141,46 +102,42 @@ const Navbar = () => {
             </svg>
           </button>
         </div>
-
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="lg:hidden mt-2 px-4 space-y-2">
-            <NavLink
-              to="/"
-              className="block px-4 py-2 hover:bg-gray-100 rounded"
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/apps"
-              className="block px-4 py-2 hover:bg-gray-100 rounded"
-            >
-              Apps
-            </NavLink>
-            <NavLink
-              to="/profile"
-              className="block px-4 py-2 hover:bg-gray-100 rounded"
-            >
-              My Profile
-            </NavLink>
-            {user ? (
-              <Link
-                onClick={handleSignOut}
-                className="px-40 py-2 w-full bg-purple-200 text-white rounded hover:bg-violet-700 transition"
-              >
-                Sign out
-              </Link>
-            ) : (
-              <Link
-                to={"/login"}
-                className="px-40 py-2 w-full bg-purple-200 text-white rounded hover:bg-violet-700 transition"
-              >
-                Login
-              </Link>
-            )}
-          </div>
-        )}
       </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <nav className="md:hidden px-4 pb-4 space-y-2">
+          {["/", "/apps", "/profile"].map((path, i) => {
+            const names = ["Home", "Apps", "My Profile"];
+            return (
+              <NavLink
+                key={path}
+                to={path}
+                onClick={handleNavClick}
+                className="block px-4 py-2 rounded hover:bg-gray-100 transition"
+              >
+                {names[i]}
+              </NavLink>
+            );
+          })}
+          {user ? (
+            <button
+              onClick={handleSignOut}
+              className="w-full text-left px-4 py-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded hover:from-blue-500 hover:to-purple-500"
+            >
+              Sign out
+            </button>
+          ) : (
+            <Link
+              to="/login"
+              onClick={handleNavClick}
+              className="block px-4 py-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded text-center hover:from-blue-500 hover:to-purple-500"
+            >
+              Login
+            </Link>
+          )}
+        </nav>
+      )}
     </header>
   );
 };

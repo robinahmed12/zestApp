@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router";
 import Layout from "../layout/Layout";
 import Home from "../pages/Home/Home";
-import { BsApp } from "react-icons/bs";
 import TrendingDetails from "../Sections/Trending/TrendingDetails";
 import Loading from "../components/Loading/Loading";
 import Login from "../Auth/Login";
@@ -10,9 +9,9 @@ import PrivateRoutes from "../private/PrivateRoutes";
 import Error from "../components/Error/Error";
 import App from "../pages/App/App";
 import EducationDetails from "../Sections/Education/EducationDetails";
-import Health from "../Sections/Health/Health";
 import HealthDetails from "../Sections/Health/HealthDetails";
 import ProductiveDetails from "../Sections/Productivity/Productivedetails";
+import Profile from "../pages/Profile/Profile";
 
 
 export const router = createBrowserRouter([
@@ -66,6 +65,12 @@ export const router = createBrowserRouter([
         {
           path: '/apps',
           element: <App/>
+        },
+
+        {
+          path: '/profile',
+          element: <PrivateRoutes><Profile/></PrivateRoutes>
+          
         }
       ]
     },
