@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaFacebook, FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
+import logo from '../../assets/log2-removebg-preview.png'
 
 const Footer = () => {
     return (
@@ -8,7 +9,9 @@ const Footer = () => {
       <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Logo and Description */}
         <div>
-          <h2 className="text-2xl font-bold text-white">ZestApps</h2>
+          <div>
+            <img className='w-[300px]' src={logo} alt="" srcset="" />
+          </div>
           <p className="mt-2 text-sm text-gray-400">
             Delivering excellence in every digital experience.
           </p>
@@ -60,7 +63,7 @@ const Footer = () => {
 
       {/* Bottom Footer */}
       <div className="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} YourBrand. All rights reserved.
+        © {new Date().getFullYear()} ZestApps. All rights reserved.
       </div>
     </footer>
         </>
