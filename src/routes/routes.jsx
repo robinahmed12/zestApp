@@ -12,6 +12,7 @@ import EducationDetails from "../Sections/Education/EducationDetails";
 import HealthDetails from "../Sections/Health/HealthDetails";
 import ProductiveDetails from "../Sections/Productivity/Productivedetails";
 import Profile from "../pages/Profile/Profile";
+import Developers from "../pages/Developers/Developers";
 
 
 export const router = createBrowserRouter([
@@ -71,6 +72,12 @@ export const router = createBrowserRouter([
           path: '/profile',
           element: <PrivateRoutes><Profile/></PrivateRoutes>
           
+        },
+        {
+          path: '/developer',
+          element: <Developers/>,
+          loader: () => fetch('/developer.json'),
+          hydrateFallbackElement: <Loading/>
         }
       ]
     },

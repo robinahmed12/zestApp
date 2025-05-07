@@ -27,8 +27,8 @@ const Navbar = () => {
 
         {/* Desktop Nav */}
         <ul className="hidden text-lg md:flex space-x-6 items-center">
-          {["/", "/apps", "/profile"].map((path, i) => {
-            const names = ["Home", "Apps", "My Profile"];
+          {["/", "/apps", "/profile", "/developer"].map((path, i) => {
+            const names = ["Home", "Apps", "My Profile" , "Developers"];
             return (
               <li key={path}>
                 <NavLink

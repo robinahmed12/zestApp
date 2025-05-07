@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Alice Johnson",
+    "image": "https://img.freepik.com/free-photo/medium-shot-smiley-programmer-indoors_23-2149101154.jpg?t=st=1746637352~exp=1746640952~hmac=012fca71b6fcb1384ab6db14cfd25779d359e4a8bf80c2283bbea0522d658aa4&w=1380",
+    "role": "Frontend Developer",
+    "about": "Passionate about UI/UX design and modern web frameworks. Loves building responsive and accessible websites."
+  },
+  {
+    "id": 2,
+    "name": "Bob Smith",
+    "image": "https://img.freepik.com/free-photo/confident-young-entrepreneur-sitting-table-with-laptop-pc-isolated-white_231208-11121.jpg?t=st=1746637399~exp=1746640999~hmac=986e00cd3bfdb869324c79b6946fe3dddf4a52d9504a1169b40d654040370383&w=1380",
+    "role": "Backend Developer",
+    "about": "Specializes in Node.js and Python. Always focused on scalable server architecture and API design."
+  },
+  {
+    "id": 3,
+    "name": "Cara Lee",
+    "image": "https://img.freepik.com/free-photo/html-css-collage-concept-with-person_23-2150061986.jpg?t=st=1746637441~exp=1746641041~hmac=2947ee9a393a8a5c5d7b6082f94500de5782baef1b7f104423d2c039c53014f4&w=1380",
+    "role": "Full Stack Developer",
+    "about": "Experienced in React and Django. Builds end-to-end solutions for startups and growing businesses."
+  },
+  {
+    "id": 4,
+    "name": "David Kim",
+    "image": "https://img.freepik.com/free-photo/concentrated-young-bearded-man-wearing-glasses-dressed-shirt-using-laptop-isolated-white-wall_231208-9247.jpg?t=st=1746637468~exp=1746641068~hmac=a0d4eeaa0af20c45c9e095ba798a4498a82dcbe005a6b2d028d5298f1229da14&w=740",
+    "role": "Mobile App Developer",
+    "about": "Android and iOS expert using Flutter and Swift. Focused on smooth user experiences and performance."
+  },
+  {
+    "id": 5,
+    "name": "Elena Rodriguez",
+    "image": "https://img.freepik.com/free-photo/attractive-bearded-man-with-sylish-hairstyle-wearing-grey-sweater-spending-free-time-using-his-laptop_176532-7973.jpg?t=st=1746637504~exp=1746641104~hmac=df5582fff331223fa508e4aee7d292a21fe9537b42ab0d339092e144dc9d81e2&w=1380",
+    "role": "DevOps Engineer",
+    "about": "Automates CI/CD pipelines and manages cloud infrastructure on AWS and Kubernetes clusters."
+  },
+  {
+    "id": 6,
+    "name": "Frank Chen",
+    "image": "https://img.freepik.com/free-photo/smiling-bearded-man-eyeglases-using-laptop_171337-15793.jpg?t=st=1746637694~exp=1746641294~hmac=3a70d381ac529289ea9dd21e5581153a290fffd5637f95c07ff01c6c7bf6b8a2&w=1380",
+    "role": "Data Scientist",
+    "about": "Uses Python and machine learning to solve business problems and build predictive models."
+  },
+  {
+    "id": 7,
+    "name": "Grace Patel",
+    "image": "https://img.freepik.com/free-photo/young-bearded-man-glasses-blue-shirt-holding-laptop-smiling-confident_141793-37300.jpg?t=st=1746637715~exp=1746641315~hmac=279a55f2b2f2da907180cbbaae9cef59c66d2cedca09e433b907f5471374db5d&w=1380",
+    "role": "UI/UX Designer",
+    "about": "Designs intuitive interfaces and user flows using Figma and Adobe XD. Advocate for accessibility."
+  },
+  {
+    "id": 8,
+    "name": "Hiroshi Tanaka",
+    "image": "https://img.freepik.com/free-photo/cybersecurity-expert-enjoying-audiobooks-using-pc-patch-security-exposures_482257-116334.jpg?t=st=1746637742~exp=1746641342~hmac=fe25458425408ce1b435921be57fedd93d345ff5e1c7e03d8ae93760feb6ad4e&w=1380",
+    "role": "Game Developer",
+    "about": "Builds immersive games using Unity and Unreal Engine. Passionate about interactive storytelling."
+  },
+  {
+    "id": 9,
+    "name": "Ingrid Müller",
+    "image": "https://img.freepik.com/free-photo/smiling-bearded-man-using-laptop-computer_171337-18993.jpg?t=st=1746637773~exp=1746641373~hmac=b6c384d4723237a2214cc4d16c0afe78fe1bf968f661ec32121865d81c6302da&w=1380",
+    "role": "Blockchain Developer",
+    "about": "Works with Ethereum and Solidity to create decentralized applications and smart contracts."
+  },
+  {
+    "id": 10,
+    "name": "Jack Williams",
+    "image": "https://img.freepik.com/free-photo/high-angle-young-entrepreneur-working_23-2148446283.jpg?t=st=1746637791~exp=1746641391~hmac=abfa2c8b81087d0ea475c12e67e509849111c66f112ca9cd7a98dfeb9dc24aa8&w=740",
+    "role": "Software Architect",
+    "about": "Leads large-scale system designs and technical strategy. Expert in microservices and cloud computing."
+  }
+]
