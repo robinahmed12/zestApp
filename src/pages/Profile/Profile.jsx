@@ -42,7 +42,6 @@ const Profile = () => {
     useEffect(() => {
       document.title = " ZestApps | Profile";
     }),
-
     (
       <div className="max-w-2xl mx-auto mt-14 px-4 sm:px-6 lg:px-8">
         <div className="p-6 sm:p-8 bg-white rounded-xl shadow-md border border-blue-200 space-y-6">

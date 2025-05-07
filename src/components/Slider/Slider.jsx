@@ -12,8 +12,14 @@ const Slider = () => {
   const promotionalTexts = [
     ["Feel Better Faster with ", "Instant Doctor Access"],
     ["Master Your Tasks – Anytime, Anywhere", "Organize. Prioritize. Succeed."],
-    ["Doctor Visits Made Easy", "Book appointments, get consultations, stay healthy"],
-    ["Welcome to the Future of Healthcare", "Connect with trusted doctors in seconds"],
+    [
+      "Doctor Visits Made Easy",
+      "Book appointments, get consultations, stay healthy",
+    ],
+    [
+      "Welcome to the Future of Healthcare",
+      "Connect with trusted doctors in seconds",
+    ],
     ["Elegance in Every Pixel", "Visuals that captivate and inspire"],
     ["Redefine Your World", "Where ideas come to life"],
   ];

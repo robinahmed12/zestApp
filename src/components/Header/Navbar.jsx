@@ -5,17 +5,17 @@ import { AuthContext } from "../../Provider/AuthContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { user, signOutUser } = useContext(AuthContext); 
+  const { user, signOutUser } = useContext(AuthContext);
 
   const handleSignOut = () => {
     signOutUser().then(() => {
       console.log("sign out successful");
     });
-    setIsOpen(false); 
+    setIsOpen(false);
   };
 
   const handleNavClick = () => {
-    setIsOpen(false); 
+    setIsOpen(false);
   };
 
   return (
@@ -28,7 +28,7 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <ul className="hidden text-lg md:flex space-x-6 items-center">
           {["/", "/apps", "/profile", "/developer"].map((path, i) => {
-            const names = ["Home", "Apps", "My Profile" , "Developers"];
+            const names = ["Home", "Apps", "My Profile", "Developers"];
             return (
               <li key={path}>
                 <NavLink

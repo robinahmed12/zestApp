@@ -1,51 +1,47 @@
 import React, { use } from "react";
-import { Link,  useLocation, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthContext";
 import { GoogleAuthProvider } from "firebase/auth";
 import { toast } from "react-toastify";
 
 const Login = () => {
-
-  const {loginUser , singInWithGoogle} = use(AuthContext)
-  const location = useLocation()
-  const navigate = useNavigate()
+  const { loginUser, singInWithGoogle } = use(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
-    
-    e.preventDefault()
+    e.preventDefault();
 
-    const email = e.target.email.value
-    const password = e.target.password.value
+    const email = e.target.email.value;
+    const password = e.target.password.value;
 
-    // 
-    loginUser(email , password).then(result => {
-      console.log(result);
-      toast("Logged in successfully")
-      navigate(`${location ? location.state : '/'}`)
-      
-      
-    }).catch(error => {
-      console.log(error);
-      toast(error.message)
-      
-    })
-
-  }
+    //
+    loginUser(email, password)
+      .then((result) => {
+        console.log(result);
+        toast("Logged in successfully");
+        navigate(`${location ? location.state : "/"}`);
+      })
+      .catch((error) => {
+        console.log(error);
+        toast(error.message);
+      });
+  };
 
   const handleGoogleLogin = () => {
     const provider = new GoogleAuthProvider();
 
-    singInWithGoogle(provider).then(result => {
-      console.log(result);
-      toast("Logged in successfully")
-      navigate('/')
-      
-    }).catch(error => {
-      console.log(error);
-      toast(error.message)
-      
-    })
-  }
+    singInWithGoogle(provider)
+      .then((result) => {
+        console.log(result);
+        toast("Logged in successfully");
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+        toast(error.message);
+      });
+  };
   return (
     <>
       <div className="min-h-screen flex items-center justify-center  p-4">
@@ -102,8 +98,8 @@ const Login = () => {
 
           <p className="text-center text-sm text-gray-600">
             Don’t have an account?{" "}
-            <Link to={'/login/register'}
-        
+            <Link
+              to={"/login/register"}
               className="text-purple-600 hover:underline font-medium"
             >
               Register

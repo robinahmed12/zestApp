@@ -1,10 +1,10 @@
-import React from 'react';
-import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
-import { IoCloudDownloadOutline } from 'react-icons/io5';
-import { Link } from 'react-router-dom'; // changed to 'react-router-dom'
+import React from "react";
+import { FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { IoCloudDownloadOutline } from "react-icons/io5";
+import { Link } from "react-router-dom"; // changed to 'react-router-dom'
 
 const EducationCard = ({ app }) => {
-  const { thumbnail, name, rating, downloads , id } = app;
+  const { thumbnail, name, rating, downloads, id } = app;
 
   return (
     <Link to={`/detail/${id}`} className="block w-full">
@@ -15,7 +15,9 @@ const EducationCard = ({ app }) => {
           className="w-full h-48 sm:h-56 md:h-60 object-cover rounded-xl"
         />
         <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm sm:text-base">
-          <p className="font-semibold text-center sm:text-left flex-1">{name}</p>
+          <p className="font-semibold text-center sm:text-left flex-1">
+            {name}
+          </p>
 
           <div className="flex items-center text-orange-400 gap-1">
             <FaStar />
@@ -23,7 +25,9 @@ const EducationCard = ({ app }) => {
             <FaStar />
             <FaStar />
             <FaStarHalfAlt />
-            <span className="ml-1 text-gray-700 text-xs sm:text-sm">{rating}</span>
+            <span className="ml-1 text-gray-700 text-xs sm:text-sm">
+              {rating}
+            </span>
           </div>
 
           <div className="flex items-center gap-1 text-gray-600 text-xs sm:text-sm">

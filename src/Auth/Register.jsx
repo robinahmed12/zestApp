@@ -15,8 +15,7 @@ const Register = () => {
     const password = e.target.password.value;
     const name = e.target.name.value;
     const photo = e.target.photo.value;
-    console.log(name , photo);
-    
+    console.log(name, photo);
 
     const RegExpLower = /[a-z]/;
     const RegExpUpper = /[A-Z]/;
@@ -36,7 +35,6 @@ const Register = () => {
       updaterUser({ displayName: name, photoURL: photo })
         .then(() => {
           setUser({ ...user, displayName: name, photoURL: photo });
-          
 
           toast("Account created successfully");
           navigate("/");

@@ -1,13 +1,15 @@
 import React, { useContext, useState } from "react";
 import { useLoaderData, useParams } from "react-router";
-import { AuthContext } from "../../Provider/AuthContext";
 import { IoCloudDownloadOutline } from "react-icons/io5";
+import { AuthContext } from "../../Provider/AuthContext";
+import StarRatings from "react-star-ratings";
 
 const EducationDetails = () => {
-  const { id } = useParams();
-  const data = useLoaderData();
   const { user } = useContext(AuthContext);
   const { displayName } = user || {};
+  const { id } = useParams();
+  const data = useLoaderData();
+
   const [installed, setInstalled] = useState(false);
   const [wasInstalled, setWasInstalled] = useState(false);
   const [review, setReview] = useState("");
@@ -15,7 +17,6 @@ const EducationDetails = () => {
   const [showReview, setShowReview] = useState([]);
 
   const singleApp = data.find((a) => a.id === id);
-  console.log(singleApp);
   const {
     name,
     developer,
@@ -38,155 +39,207 @@ const EducationDetails = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!review || ratings === 0) return;
-
     const newReview = {
       name: displayName,
       text: review,
+      photo: user?.photoURL,
       ratings,
+      date: new Date().toISOString(),
+      user: true,
     };
-
     setShowReview([newReview, ...showReview]);
     setReview("");
     setRatings(0);
   };
 
-  const renderStars = (count) => {
-    return [...Array(5)].map((_, i) => (
-      <span key={i} className={i < count ? "text-yellow-400" : "text-gray-300"}>
-        ★
-      </span>
-    ));
+  const getDaysAgo = (dateString) => {
+    if (!dateString) return "";
+    const now = new Date();
+    const past = new Date(dateString);
+    const diffTime = Math.abs(now - past);
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    return diffDays === 0
+      ? "Today"
+      : `${diffDays} day${diffDays > 1 ? "s" : ""} ago`;
   };
+
+  const renderStars = (count) => (
+    <StarRatings
+      rating={count}
+      starRatedColor="orange"
+      numberOfStars={5}
+      name="rating"
+      starDimension="20px"
+      starSpacing="2px"
+      svgIconViewBox="0 0 24 24"
+      svgIconPath="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+    />
+  );
 
   const allReviews = [...showReview, ...reviews];
   return (
     <>
-      <div className="mt-20 p-4 md:p-10 bg-gradient-to-br from-blue-50 to-purple-50">
-        <div className="flex flex-col-reverse md:flex-row gap-8 bg-white rounded-2xl shadow-lg overflow-hidden">
-          {/* Left Section */}
-          <div className="w-full md:w-1/2 p-6 space-y-6">
-            {/* App Info */}
-            <div className="flex relative items-center gap-4">
-              <img
-                src={banner}
-                alt="App Thumbnail"
-                className="w-16 h-16 rounded-xl shadow-md transition-transform hover:scale-110 duration-300"
-              />
-              {installed && (
-                <IoCloudDownloadOutline className="absolute -bottom-2 left-11 w-[23px] text-black font-bold" />
-              )}
-              <div>
-                <h2 className="text-2xl font-bold text-blue-700">{name}</h2>
-                <p className="text-sm text-gray-600">{developer}</p>
-              </div>
-            </div>
-
-            <p className="text-gray-700 text-sm">{description}</p>
-
-            <div className="flex flex-wrap gap-4 text-sm text-purple-700 font-medium">
+      <div className="mt-20 p-4 md:p-8 bg-white max-w-screen-xl mx-auto">
+        {/* App Info Header */}
+        <div className="flex flex-col md:flex-row items-center gap-6 bg-gray-50 rounded-xl p-6 shadow-md">
+          <img
+            src={banner}
+            alt="App Thumbnail"
+            className="w-24 h-24 md:w-32 md:h-32 rounded-xl shadow"
+          />
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <h1 className="text-2xl md:text-3xl font-bold text-blue-700">
+              {name}
+            </h1>
+            <p className="text-sm text-gray-600">by {developer}</p>
+            <div className="flex gap-4 mt-2 text-sm text-gray-700">
               <span>⭐ {rating}</span>
               <span>📥 {downloads}</span>
               <span>🏷️ {category}</span>
             </div>
+          </div>
+          <button
+            onClick={handleInstall}
+            className={`mt-4 flex items-center gap-2 ${
+              installed
+                ? "bg-gradient-to-r from-purple-500 to-blue-500 hover:from-blue-500 hover:to-purple-500"
+                : "bg-gradient-to-r from-purple-500 to-blue-500 hover:from-blue-500 hover:to-purple-500"
+            } text-white font-semibold px-9 py-2 rounded-2xl shadow transition`}
+          >
+            {installed ? (
+              <>
+                <IoCloudDownloadOutline className="w-5 h-5" />
+                Installed
+              </>
+            ) : (
+              "Install"
+            )}
+          </button>
 
-            {/* Features */}
-            <div>
-              <h3 className="font-semibold text-blue-800">Features</h3>
-              <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
-                {features.map((feature, idx) => (
-                  <li key={idx}>{feature}</li>
-                ))}
-              </ul>
-            </div>
+          <button
+            onClick={handleInstall}
+            className={`mt-4 flex items-center gap-2 ${
+              installed
+                ? "bg-gradient-to-r from-purple-500 to-blue-500 hover:from-blue-500 hover:to-purple-500 :"
+                : ""
+            } text-white font-semibold px-9 py-2 rounded-2xl transition`}
+          >
+            {installed ? <>Uninstall</> : ""}
+          </button>
 
-            {/* Install/Uninstall Button */}
+          <h2 className="text-2xl font-bold text-blue-700 flex items-center gap-2"></h2>
+        </div>
+
+        {/* Banner */}
+        <div className="mt-6">
+          <img
+            src={thumbnail}
+            alt="App Banner"
+            className="w-[500px] rounded-xl object-cover shadow"
+          />
+        </div>
+
+        {/* Description */}
+        <div className="mt-6 space-y-3">
+          <h2 className="text-xl font-semibold text-gray-800">
+            About This App
+          </h2>
+          <p className="text-gray-700 text-sm leading-relaxed">{description}</p>
+        </div>
+
+        {/* Features */}
+        <div className="mt-4">
+          <h3 className="text-lg font-semibold text-gray-800">Key Features</h3>
+          <ul className="list-disc pl-5 text-sm text-gray-700">
+            {features.map((feature, idx) => (
+              <li key={idx}>{feature}</li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Reviews Section */}
+        <div className="mt-10">
+          <h3 className="text-xl font-semibold mb-2 text-gray-800">
+            Ratings & Reviews
+          </h3>
+          <p className="text-gray-600 text-sm mb-4">
+            Your feedback helps us improve the app experience.
+          </p>
+          <p className="mb-2 text-sm text-green-600 font-medium">
+            {installed
+              ? ""
+              : wasInstalled
+              ? "You have previously installed this app! You can leave a review"
+              : "You need to install the app to leave a review."}
+          </p>
+          <form
+            onSubmit={handleSubmit}
+            className="bg-gray-50 p-4 rounded-xl space-y-4 shadow"
+          >
+            <StarRatings
+              rating={ratings}
+              starRatedColor="#FFA500"
+              changeRating={(newRating) => setRatings(newRating)}
+              numberOfStars={5}
+              name="review-rating"
+              starDimension="30px"
+              starSpacing="5px"
+              svgIconViewBox="0 0 24 24"
+              svgIconPath="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+            />
+            <textarea
+              disabled={!wasInstalled}
+              className="w-full border p-2 rounded-md"
+              placeholder="Write your review..."
+              rows={3}
+              value={review}
+              onChange={(e) => setReview(e.target.value)}
+            ></textarea>
             <button
-              onClick={handleInstall}
-              className="mt-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold px-9 py-2 rounded-2xl shadow hover:from-blue-700 hover:to-purple-700 transition"
+              type="submit"
+              className={`w-full text-center py-2 rounded-md font-semibold ${
+                wasInstalled
+                  ? "bg-blue-600 hover:bg-purple-700 text-white"
+                  : "bg-gray-300 text-gray-600 cursor-not-allowed"
+              }`}
             >
-              {installed ? "Uninstall" : "Install"}
+              Submit Review
             </button>
+          </form>
 
-            {/* Install Status */}
-            <p className="mt-2 text-sm text-green-600 font-medium">
-              {installed
-                ? "App is currently installed."
-                : wasInstalled
-                ? "You have previously installed this app."
-                : "You need to install the app to leave a review."}
-            </p>
-
-            {/* Review Form */}
-            <form onSubmit={handleSubmit} className="space-y-4 mt-6">
-              <textarea
-                onChange={(e) => setReview(e.target.value)}
-                value={review}
-                disabled={!wasInstalled}
-                placeholder="Write your review..."
-                className="w-full p-2 border rounded-md"
-                rows={4}
-              />
-
-              <div className="flex items-center gap-1">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <button
-                    type="button"
-                    key={star}
-                    onClick={() => setRatings(star)}
-                    className={`text-2xl ${
-                      star <= ratings ? "text-yellow-400" : "text-gray-300"
-                    }`}
-                  >
-                    ★
-                  </button>
-                ))}
-              </div>
-
-              <button
-                type="submit"
-                className={`px-4 py-2 rounded-md text-white font-semibold ${
-                  wasInstalled
-                    ? "bg-green-600 hover:bg-green-700"
-                    : "bg-gray-400 cursor-not-allowed"
-                }`}
-              >
-                Submit Review
-              </button>
-
-              {!wasInstalled && (
-                <p className="text-sm text-red-500">
-                  You must install the app before submitting a review.
-                </p>
-              )}
-            </form>
-
-            {/* Review List */}
-            <div className="space-y-4">
-              {allReviews.length === 0 ? (
-                <p className="text-gray-500">No reviews yet.</p>
-              ) : (
-                allReviews.map((r, idx) => (
-                  <div key={idx} className="border rounded-lg p-4 shadow-sm">
-                    <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-semibold">@{r.name || r.user}</h4>
-                      <div className="text-yellow-400">
-                        {renderStars(r.ratings || r.rating)}
+          <div className="mt-6 space-y-4">
+            {allReviews.length === 0 ? (
+              <p className="text-gray-500">No reviews yet.</p>
+            ) : (
+              allReviews.map((r, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white border p-4 rounded-xl shadow-md"
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-3">
+                      {r.user && r.photo && (
+                        <img
+                          src={r.photo}
+                          alt="avatar"
+                          className="w-8 h-8 rounded-full"
+                        />
+                      )}
+                      <div>
+                        <p className="font-semibold">@{r.name || r.user}</p>
+                        {r.user && r.date && (
+                          <p className="text-xs text-gray-400">
+                            {getDaysAgo(r.date)}
+                          </p>
+                        )}
                       </div>
                     </div>
-                    <p className="text-gray-700">{r.text || r.comment}</p>
+                    {renderStars(r.ratings || r.rating)}
                   </div>
-                ))
-              )}
-            </div>
-          </div>
-
-          {/* Right Section - Banner */}
-          <div className="w-full md:w-1/2">
-            <img
-              src={thumbnail}
-              alt="App Banner"
-              className="w-[650px] mt-10 object-cover transition-transform duration-300 hover:scale-105"
-            />
+                  <p className="text-sm text-gray-700">{r.text || r.comment}</p>
+                </div>
+              ))
+            )}
           </div>
         </div>
       </div>

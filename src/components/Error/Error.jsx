@@ -10,9 +10,11 @@ const Error = () => {
   return (
     <>
       <div className="min-h-screen flex items-center justify-center  text-white p-4">
-        <div className="text-center max-w-md
+        <div
+          className="text-center max-w-md
          bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600 
-          bg-opacity-10 backdrop-blur-sm rounded-2xl p-10 shadow-2xl">
+          bg-opacity-10 backdrop-blur-sm rounded-2xl p-10 shadow-2xl"
+        >
           <h1 className="text-6xl font-bold mb-4">404</h1>
           <p className="text-xl mb-6">
             Oops! The page you're looking for doesn't exist.

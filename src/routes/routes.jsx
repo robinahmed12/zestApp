@@ -14,71 +14,91 @@ import ProductiveDetails from "../Sections/Productivity/Productivedetails";
 import Profile from "../pages/Profile/Profile";
 import Developers from "../pages/Developers/Developers";
 
-
 export const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Layout/>,
-      errorElement: <Error/>,
-      children: [
-        {
-            index: true,
-            element: <Home/>,  
-        },
-        {
-          path: '/details/:id',
-          element: <PrivateRoutes><TrendingDetails/></PrivateRoutes>,
-          loader: ()=> fetch('/trending.json'),
-          hydrateFallbackElement: <Loading/>
-        },
+  {
+    path: "/",
+    element: <Layout />,
+    errorElement: <Error />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "/details/:id",
+        element: (
+          <PrivateRoutes>
+            <TrendingDetails />
+          </PrivateRoutes>
+        ),
+        loader: () => fetch("/trending.json"),
+        hydrateFallbackElement: <Loading />,
+      },
 
-        {
-          path: '/detail/:id',
-          element: <PrivateRoutes><EducationDetails/></PrivateRoutes>,
-          loader: ()=> fetch('/education.json'),
-          hydrateFallbackElement: <Loading/>
+      {
+        path: "/detail/:id",
+        element: (
+          <PrivateRoutes>
+            <EducationDetails />
+          </PrivateRoutes>
+        ),
+        loader: () => fetch("/education.json"),
+        hydrateFallbackElement: <Loading />,
+      },
 
-        },
+      {
+        path: "/description/:id",
+        element: (
+          <PrivateRoutes>
+            <HealthDetails />
+          </PrivateRoutes>
+        ),
+        loader: () => fetch("/health.json"),
+        hydrateFallbackElement: <Loading />,
+      },
 
-        {
-          path: '/description/:id',
-          element: <PrivateRoutes><HealthDetails/></PrivateRoutes>,
-          loader: ()=> fetch('/health.json'),
-          hydrateFallbackElement: <Loading/>
-        },
+      {
+        path: "/detail1/:id",
+        element: (
+          <PrivateRoutes>
+            <ProductiveDetails />
+          </PrivateRoutes>
+        ),
+        loader: () => fetch("/productivity.json"),
+        hydrateFallbackElement: <Loading />,
+      },
 
-        {
-          path: '/detail1/:id',
-          element: <PrivateRoutes><ProductiveDetails/></PrivateRoutes>,
-          loader: ()=> fetch('/productivity.json'),
-          hydrateFallbackElement: <Loading/>
-        },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/login/register",
+        element: <Register />,
+      },
+      {
+        path: "/apps",
+        element: <App />,
+      },
 
-
-        {
-          path:'/login',
-          element: <Login/>
-        },
-        {
-          path: '/login/register',
-          element: <Register/>
-        },
-        {
-          path: '/apps',
-          element: <App/>
-        },
-
-        {
-          path: '/profile',
-          element: <PrivateRoutes><Profile/></PrivateRoutes>
-          
-        },
-        {
-          path: '/developer',
-          element: <Developers/>,
-          loader: () => fetch('/developer.json'),
-          hydrateFallbackElement: <Loading/>
-        }
-      ]
-    },
-  ]);
+      {
+        path: "/profile",
+        element: (
+          <PrivateRoutes>
+            <Profile />
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/developer",
+        element: (
+          <PrivateRoutes>
+            <Developers />
+          </PrivateRoutes>
+        ),
+        loader: () => fetch("/developer.json"),
+        hydrateFallbackElement: <Loading />,
+      },
+    ],
+  },
+]);
