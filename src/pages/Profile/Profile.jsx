@@ -1,7 +1,6 @@
 import React, { use, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthContext";
 import { toast } from "react-toastify";
-import Loading from "../../components/Loading/Loading";
 
 const Profile = () => {
   const { user, updaterUser } = use(AuthContext);

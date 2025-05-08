@@ -1,7 +1,9 @@
 import React from "react";
-import { FaFacebook, FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaGithub, FaLinkedin ,  } from "react-icons/fa";
 import logo from "../../assets/log2-removebg-preview.png";
 import { Link } from "react-router";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -70,7 +72,10 @@ const Footer = () => {
                 <FaFacebook />
               </a>
               <a href="https://twitter.com" className="hover:text-white">
-                <FaTwitter />
+                <FaXTwitter/>
+              </a>
+              <a href="https://twitter.com" className="hover:text-white">
+                <FaInstagram/>
               </a>
               <a href="https://github.com" className="hover:text-white">
                 <FaGithub />

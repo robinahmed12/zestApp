@@ -24,7 +24,7 @@ export const router = createBrowserRouter([
         index: true,
         element: <Home />,
         loader: async () => {
-          await new Promise((res) => setTimeout(res, 500)); // simulate delay
+          await new Promise((res) => setTimeout(res, 200)); 
           return null;
         },
       },
@@ -93,7 +93,7 @@ export const router = createBrowserRouter([
         element: <App />,
         hydrateFallbackElement: <Loading />,
         loader: async () => {
-          await new Promise((res) => setTimeout(res, 200)); // simulate delay
+          await new Promise((res) => setTimeout(res, 200));
           return null;
         },
       },
@@ -106,7 +106,7 @@ export const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: async () => {
-          await new Promise((res) => setTimeout(res, 200)); // simulate delay
+          await new Promise((res) => setTimeout(res, 200)); 
           return null;
         },
       },
@@ -118,8 +118,7 @@ export const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: () => fetch("/developer.json"),
-        hydrateFallbackElement: <Loading/>
-
+        hydrateFallbackElement: <Loading />,
       },
     ],
   },
