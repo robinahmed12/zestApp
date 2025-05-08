@@ -2,7 +2,7 @@ import React from "react";
 
 const ProfileCard = ({ developer }) => {
   const { name, image, role, about } = developer;
-  console.log(name);
+  
 
   return (
     <>

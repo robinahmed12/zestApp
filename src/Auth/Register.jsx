@@ -1,13 +1,16 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthContext";
 import { GoogleAuthProvider } from "firebase/auth";
 import { toast } from "react-toastify";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
   const { createUser, setUser, singInWithGoogle, updaterUser } =
     use(AuthContext);
   const location = useLocation();
+  const [showPassword, setShowPassword] = useState(true);
 
   const navigate = useNavigate();
   const handleRegister = (e) => {
@@ -17,7 +20,6 @@ const Register = () => {
     const password = e.target.password.value;
     const name = e.target.name.value;
     const photo = e.target.photo.value;
-    console.log(name, photo);
 
     const RegExpLower = /[a-z]/;
     const RegExpUpper = /[A-Z]/;
@@ -53,7 +55,8 @@ const Register = () => {
 
     singInWithGoogle(provider)
       .then((result) => {
-        console.log(result);
+        const user = result.user;
+        setUser(user);
         toast("Account created successfully");
         navigate(`${location?.state ?? "/"}`);
       })
@@ -88,12 +91,21 @@ const Register = () => {
               name="photo"
               className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
-            <input
-              type="password"
-              placeholder="Password"
-              name="password"
-              className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
-            />
+            <div className="relative">
+              <input
+                type={`${showPassword ? "password" : "text"}`}
+                placeholder="Password"
+                name="password"
+                className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              />
+              <div onClick={() => setShowPassword(!showPassword)}>
+                {showPassword ? (
+                  <FaEye className="absolute text-gray-700 right-2 bottom-4" />
+                ) : (
+                  <FaEyeSlash className="absolute text-gray-700 right-2 bottom-4" />
+                )}
+              </div>
+            </div>
 
             <button
               type="submit"
@@ -127,7 +139,9 @@ const Register = () => {
                 src="https://www.svgrepo.com/show/355037/google.svg"
                 alt=""
               />
-              <span className="font-bold text-gray-700">Continue with Google</span>
+              <span className="font-bold text-gray-700">
+                Continue with Google
+              </span>
             </button>
           </div>
         </div>

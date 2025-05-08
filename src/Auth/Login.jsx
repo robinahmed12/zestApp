@@ -1,13 +1,18 @@
-import React, { use } from "react";
+import React, { use, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthContext";
 import { GoogleAuthProvider } from "firebase/auth";
 import { toast } from "react-toastify";
+import { FaEye } from "react-icons/fa";
+
+import { FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
-  const { loginUser, singInWithGoogle } = use(AuthContext);
+  const { loginUser, singInWithGoogle, setUser, passwordReset } =
+    use(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(true);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -18,12 +23,12 @@ const Login = () => {
     //
     loginUser(email, password)
       .then((result) => {
-        console.log(result);
+        const user = result.user;
+        setUser(user);
         toast("Logged in successfully");
         navigate(`${location?.state ?? "/"}`);
       })
       .catch((error) => {
-        console.log(error);
         toast(error.message);
       });
   };
@@ -33,15 +38,29 @@ const Login = () => {
 
     singInWithGoogle(provider)
       .then((result) => {
-        console.log(result);
+        const user = result.user;
+        setUser(user);
         toast("Logged in successfully");
         navigate(`${location?.state ?? "/"}`);
       })
       .catch((error) => {
-        console.log(error);
         toast(error.message);
       });
   };
+
+  const emailRef = useRef();
+  const handleReset = () => {
+    const email = emailRef.current.value;
+
+    passwordReset(email)
+      .then(() => {
+        toast("password reset email has sent");
+      })
+      .catch((error) => {
+        toast(error.message);
+      });
+  };
+
   return (
     <>
       <div className="min-h-screen flex items-center justify-center  p-4">
@@ -57,6 +76,7 @@ const Login = () => {
               <input
                 type="email"
                 name="email"
+                ref={emailRef}
                 className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
                 placeholder="you@example.com"
               />
@@ -65,18 +85,37 @@ const Login = () => {
               <label className="block text-sm font-semibold text-gray-700">
                 Password
               </label>
-              <input
-                type="password"
-                name="password"
-                className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
-                placeholder="••••••••"
-              />
+              <div className="relative">
+                <input
+                  type={`${showPassword ? "password" : "text"}`}
+                  name="password"
+                  className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  placeholder="••••••••"
+                />
+
+                <div onClick={() => setShowPassword(!showPassword)}>
+                  {showPassword ? (
+                    <FaEye className="absolute text-gray-700 right-2 bottom-3" />
+                  ) : (
+                    <FaEyeSlash className="absolute text-gray-700 right-2 bottom-3" />
+                  )}
+                </div>
+              </div>
+            </div>
+
+            <div className="border-b border-neutral-400  border-double  ">
+              <button
+                onClick={handleReset}
+                className="text-neutral-700 mb-1    text-sm"
+              >
+                Forget Password
+              </button>
             </div>
             <button
               type="submit"
               className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold py-2 rounded-lg transition duration-300"
             >
-              Log In
+              Log in
             </button>
           </form>
 

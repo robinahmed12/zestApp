@@ -118,8 +118,8 @@ export const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: () => fetch("/developer.json"),
+        hydrateFallbackElement: <Loading/>
 
-        hydrateFallbackElement: <Loading />,
       },
     ],
   },

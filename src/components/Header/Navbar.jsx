@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import logo from "../../assets/log2-removebg-preview.png";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthContext";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +10,7 @@ const Navbar = () => {
 
   const handleSignOut = () => {
     signOutUser().then(() => {
-      console.log("sign out successful");
+      toast("sign out successful");
     });
     setIsOpen(false);
   };
