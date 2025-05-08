@@ -1,12 +1,13 @@
 import React from "react";
 import { FaFacebook, FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
 import logo from "../../assets/log2-removebg-preview.png";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
     <>
-      <footer className="bg-gray-900 text-gray-300 py-10 px-6 mt-10">
-        <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <footer className="bg-gray-900  text-gray-300 py-10 px-8 mt-10">
+        <div className=" grid grid-cols-1 sm:grid-cols-2 lg:flex  lg:justify-between lg:items-center  gap-8">
           {/* Logo and Description */}
           <div>
             <div>
@@ -16,6 +17,28 @@ const Footer = () => {
               Delivering excellence in every digital experience.
             </p>
           </div>
+
+          <ul className=" text-[16px] md:flex md:flex-col gap-1 items-start space-x-6">
+            {["/", "/apps", "/profile", "/developer"].map((path, i) => {
+              const names = ["Home", "Apps", "My Profile", "Developers"];
+              return (
+                <li key={path}>
+                  <Link
+                    to={path}
+                    className={({ isActive }) =>
+                      `px-4 hover:text-violet-600 transition-colors duration-200 ${
+                        isActive
+                          ? "text-blue-600 font-semibold"
+                          : "text-gray-700"
+                      }`
+                    }
+                  >
+                    {names[i]}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
 
           {/* Links */}
           <div>
