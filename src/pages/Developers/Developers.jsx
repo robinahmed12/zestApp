@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLoaderData } from "react-router";
 import Profile from "../Profile/Profile";
 import ProfileCard from "./ProfileCard";
 
 const Developers = () => {
   const data = useLoaderData();
-  console.log(data);
+ 
 
   return (
+    useEffect(()=>{
+      document.title = "ZestApps | Developers"
+    }),
+
     <>
       <div className="mt-16">
         <h1 className="text-2xl text-center sm:text-3xl font-bold text-gray-800 mb-6">

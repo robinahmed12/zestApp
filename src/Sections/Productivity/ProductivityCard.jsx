@@ -1,7 +1,7 @@
 import React from "react";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { IoCloudDownloadOutline } from "react-icons/io5";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 const ProductivityCArd = ({ app }) => {
   const { banner, name, rating, downloads, id } = app;

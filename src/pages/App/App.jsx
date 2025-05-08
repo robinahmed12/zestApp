@@ -8,6 +8,7 @@ const App = () => {
   useEffect(() => {
     document.title = " ZestApps | Apps";
   });
+
   return (
     <>
       <div>
