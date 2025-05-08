@@ -1,5 +1,5 @@
 import React, { use } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthContext";
 import { GoogleAuthProvider } from "firebase/auth";
 import { toast } from "react-toastify";
@@ -7,6 +7,8 @@ import { toast } from "react-toastify";
 const Register = () => {
   const { createUser, setUser, singInWithGoogle, updaterUser } =
     use(AuthContext);
+  const location = useLocation();
+
   const navigate = useNavigate();
   const handleRegister = (e) => {
     e.preventDefault();
@@ -37,7 +39,7 @@ const Register = () => {
           setUser({ ...user, displayName: name, photoURL: photo });
 
           toast("Account created successfully");
-          navigate("/");
+          navigate(`${location?.state ?? "/"}`);
         })
         .catch((error) => {
           toast(error.message);
@@ -53,7 +55,7 @@ const Register = () => {
       .then((result) => {
         console.log(result);
         toast("Account created successfully");
-        navigate("/");
+        navigate(`${location?.state ?? "/"}`);
       })
       .catch((error) => {
         toast(error.message);
@@ -110,7 +112,9 @@ const Register = () => {
               Login
             </Link>
           </div>
-
+          <div className="flex items-center mt-3 justify-center">
+            <span className="text-gray-400">or</span>
+          </div>
           <div className="mt-6">
             <button
               onClick={handleGoogle}
@@ -123,7 +127,7 @@ const Register = () => {
                 src="https://www.svgrepo.com/show/355037/google.svg"
                 alt=""
               />
-              <span>Continue with Google</span>
+              <span className="font-bold text-gray-700">Continue with Google</span>
             </button>
           </div>
         </div>

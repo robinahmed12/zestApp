@@ -20,7 +20,7 @@ const Login = () => {
       .then((result) => {
         console.log(result);
         toast("Logged in successfully");
-        navigate(`${location ? location.state : "/"}`);
+        navigate(`${location?.state ?? "/"}`);
       })
       .catch((error) => {
         console.log(error);
@@ -35,7 +35,7 @@ const Login = () => {
       .then((result) => {
         console.log(result);
         toast("Logged in successfully");
-        navigate("/");
+        navigate(`${location?.state ?? "/"}`);
       })
       .catch((error) => {
         console.log(error);

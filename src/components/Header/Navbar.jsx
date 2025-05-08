@@ -107,8 +107,8 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <nav className="md:hidden text-lg px-4 pb-4 space-y-2">
-          {["/", "/apps", "/profile"].map((path, i) => {
-            const names = ["Home", "Apps", "My Profile"];
+          {["/", "/apps", "/profile", "/developer"].map((path, i) => {
+            const names = ["Home", "Apps", "My Profile", "Developers"];
             return (
               <NavLink
                 key={path}

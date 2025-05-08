@@ -7,13 +7,13 @@ import pic4 from "../../assets/veg 4.webp";
 
 const Launch = () => {
   return (
-    <div className="px-4 sm:px-6 lg:px-12 py-8">
+    <div className="px-4  mt-12 sm:px-6 lg:px-12 py-8">
       <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6">
         Launching Soon
       </h1>
 
       <Marquee pauseOnHover={true} speed={50} gradient={false}>
-        <div className="flex gap-4 items-center">
+        <div className="flex gap-4 mt-10 items-center">
           {[pic1, pic2, pic3, pic4].map((img, index) => (
             <img
               key={index}
