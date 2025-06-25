@@ -107,44 +107,57 @@ Each app in ZesrApps is organized into four main categories:
 🚀 Local Development Setup
 Prerequisites
 Node.js (v18 or later recommended)
+<br>
 
-npm (comes with Node.js) or Yarn
+npm (comes with Node.js)
+<br>
+or Yarn
 
 Git (for cloning the repository)
 
 Quick Start Guide
+<br>
 Clone the repository
 
 bash
 [git clone https://github.com/your-username/repo-name.git](https://github.com/robinahmed12/zestApp.git)
+<br>
 cd repo-name
+<br>
 Install dependencies
 
 bash
 npm install
 # or
 yarn install
+<br>
 Start the development server
 
 bash
 npm run dev
 # or
 yarn dev
+<br>
 Open in your browser
+<br>
 The app will typically run on:
 
-text
+
 http://localhost:5173
 (Check your terminal for the exact URL)
 
 Alternative Commands
+<br>
 Production build:
 
 bash
+<br>
 npm run build
+<br>
 Preview production build:
 
 bash
+<br>
 npm run preview
 
 
