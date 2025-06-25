@@ -101,6 +101,50 @@ Each app in ZesrApps is organized into four main categories:
 "tailwindcss": "^4.1.5"
 
 
+🚀 Local Development Setup
+Prerequisites
+Node.js (v18 or later recommended)
+
+npm (comes with Node.js) or Yarn
+
+Git (for cloning the repository)
+
+Quick Start Guide
+Clone the repository
+
+bash
+[git clone https://github.com/your-username/repo-name.git](https://github.com/robinahmed12/zestApp.git)
+cd repo-name
+Install dependencies
+
+bash
+npm install
+# or
+yarn install
+Start the development server
+
+bash
+npm run dev
+# or
+yarn dev
+Open in your browser
+The app will typically run on:
+
+text
+http://localhost:5173
+(Check your terminal for the exact URL)
+
+Alternative Commands
+Production build:
+
+bash
+npm run build
+Preview production build:
+
+bash
+npm run preview
+
+
 
 
 
