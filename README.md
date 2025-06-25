@@ -101,6 +101,9 @@ Each app in ZesrApps is organized into four main categories:
 "tailwindcss": "^4.1.5"
 
 
+<br>
+
+
 🚀 Local Development Setup
 Prerequisites
 Node.js (v18 or later recommended)
@@ -147,6 +150,7 @@ npm run preview
 
 
 
+<br>
 
 
 
